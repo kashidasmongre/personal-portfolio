@@ -7,22 +7,28 @@
       "imageHint": "professional man"
     },
     {
-      "id": "project-burger",
-      "description": "Burger Cafe Website Project",
-      "imageUrl": "https://images.unsplash.com/photo-1647456612962-f081347a1178?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXJnZXIlMjB3ZWJzaXRlfGVufDB8fHx8MTc1ODgwNDE1MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "burger website"
+      "id": "project-electrician",
+      "description": "Website for a local electrician",
+      "imageUrl": "https://images.unsplash.com/photo-1467733238130-bb6846885316?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbGVjdHJpY2lhbiUyMHdlYnNpdGV8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "electrician website"
     },
     {
-      "id": "project-branding",
-      "description": "Local Store Branding Project",
-      "imageUrl": "https://images.unsplash.com/photo-1731012189558-c2d035998542?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdG9yZSUyMGJyYW5kaW5nfGVufDB8fHx8MTc1ODgwNDE1MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "store branding"
+      "id": "project-inventory",
+      "description": "Inventory management system dashboard",
+      "imageUrl": "https://images.unsplash.com/photo-1667053310801-d83094493eb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpbnZlbnRvcnklMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "inventory dashboard"
     },
     {
-      "id": "project-marketing",
-      "description": "Digital Marketing Campaign Project",
-      "imageUrl": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkaWdpdGFsJTIwbWFya2V0aW5nfGVufDB8fHx8MTc1ODc5Nzk4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "digital marketing"
+      "id": "project-support-ticket",
+      "description": "Customer support ticketing system",
+      "imageUrl": "https://images.unsplash.com/photo-1560264418-c4445382edbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjdXN0b21lciUyMHN1cHBvcnR8ZW58MHx8fHwxNzU4ODAwMjAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "customer support"
+    },
+    {
+      "id": "project-payment-qr",
+      "description": "Dynamic QR code payment generator",
+      "imageUrl": "https://images.unsplash.com/photo-1581250601918-6138c3769148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxxciUyMHBheW1lbnR8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "qr payment"
     }
   ]
 }
