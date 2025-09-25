@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { useEffect, useRef } from "react";
 import { Linkedin, Instagram, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -67,7 +68,7 @@ function SubmitButton() {
 
 const Contact = () => {
   const initialState = { message: "", errors: {}, type: "" };
-  const [state, dispatch] = useFormState(submitContactForm, initialState);
+  const [state, dispatch] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const { ref: sectionRef, isVisible } = useAnimation(0.2);
