@@ -1,10 +1,10 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { useAnimation } from "@/hooks/use-animation";
 import { cn } from "@/lib/utils";
 import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import Link from "next/link";
 
 const Contact = () => {
   const { ref: sectionRef, isVisible } = useAnimation(0.2);
@@ -48,11 +48,11 @@ const Contact = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          <Button variant="default" size="lg" className="group w-full max-w-xs mx-auto" asChild>
-            <a href="mailto:kashidasmongre.x@gmail.com">
+          <Button size="lg" className="group w-full max-w-xs mx-auto" asChild>
+            <Link href="mailto:kashidasmongre.x@gmail.com">
               <Mail className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
               Email Me Directly
-            </a>
+            </Link>
           </Button>
 
             <div className="mt-8">
