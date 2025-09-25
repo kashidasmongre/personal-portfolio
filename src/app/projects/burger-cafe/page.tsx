@@ -14,29 +14,29 @@ import { useAnimation } from '@/hooks/use-animation';
 
 const menuItems = {
   burgers: [
-    { name: 'Classic Beef Burger', price: '$12.99', description: 'A juicy 1/3 lb beef patty with fresh lettuce, tomato, pickles, and our secret sauce.', image: 'https://picsum.photos/seed/b-burger1/400/300', hint: 'classic burger' },
-    { name: 'Spicy Chicken Burger', price: '$11.99', description: 'Crispy fried chicken breast with a spicy kick, jalapeños, and cool ranch coleslaw.', image: 'https://picsum.photos/seed/b-burger2/400/300', hint: 'chicken burger' },
-    { name: 'Veggie Supreme Burger', price: '$10.99', description: 'A delicious plant-based patty with avocado, sprouts, grilled onions, and vegan mayo.', image: 'https://picsum.photos/seed/b-burger3/400/300', hint: 'veggie burger' },
+    { name: 'Classic Beef Burger', price: '$12.99', description: 'A juicy 1/3 lb beef patty with fresh lettuce, tomato, pickles, and our secret sauce.', image: 'https://picsum.photos/seed/juicyburger/400/300', hint: 'classic burger' },
+    { name: 'Spicy Chicken Burger', price: '$11.99', description: 'Crispy fried chicken breast with a spicy kick, jalapeños, and cool ranch coleslaw.', image: 'https://picsum.photos/seed/chickenburger/400/300', hint: 'chicken burger' },
+    { name: 'Veggie Supreme Burger', price: '$10.99', description: 'A delicious plant-based patty with avocado, sprouts, grilled onions, and vegan mayo.', image: 'https://picsum.photos/seed/veggieburger/400/300', hint: 'veggie burger' },
   ],
   coffee: [
-    { name: 'Espresso', price: '$3.50', description: 'A concentrated shot of rich, dark coffee.', image: 'https://picsum.photos/seed/b-coffee1/400/300', hint: 'espresso shot' },
-    { name: 'Latte', price: '$5.00', description: 'Smooth espresso with steamed milk and a light layer of foam.', image: 'https://picsum.photos/seed/b-coffee2/400/300', hint: 'latte art' },
-    { name: 'Cappuccino', price: '$4.50', description: 'Equal parts espresso, steamed milk, and frothed milk.', image: 'https://picsum.photos/seed/b-coffee3/400/300', hint: 'cappuccino coffee' },
+    { name: 'Espresso', price: '$3.50', description: 'A concentrated shot of rich, dark coffee.', image: 'https://picsum.photos/seed/espressoshot/400/300', hint: 'espresso shot' },
+    { name: 'Latte', price: '$5.00', description: 'Smooth espresso with steamed milk and a light layer of foam.', image: 'https://picsum.photos/seed/coffeelatte/400/300', hint: 'latte art' },
+    { name: 'Cappuccino', price: '$4.50', description: 'Equal parts espresso, steamed milk, and frothed milk.', image: 'https://picsum.photos/seed/cappuccinoart/400/300', hint: 'cappuccino coffee' },
   ],
   sides: [
-    { name: 'Loaded Fries', price: '$7.99', description: 'Golden fries topped with melted cheese, bacon bits, and green onions.', image: 'https://picsum.photos/seed/b-side1/400/300', hint: 'loaded fries' },
-    { name: 'Onion Rings', price: '$6.99', description: 'Thick-cut and beer-battered, served with a side of chipotle aioli.', image: 'https://picsum.photos/seed/b-side2/400/300', hint: 'onion rings' },
-    { name: 'House Salad', price: '$5.99', description: 'Mixed greens with cherry tomatoes, cucumber, and a light vinaigrette.', image: 'https://picsum.photos/seed/b-side3/400/300', hint: 'fresh salad' },
+    { name: 'Loaded Fries', price: '$7.99', description: 'Golden fries topped with melted cheese, bacon bits, and green onions.', image: 'https://picsum.photos/seed/loadedfries/400/300', hint: 'loaded fries' },
+    { name: 'Onion Rings', price: '$6.99', description: 'Thick-cut and beer-battered, served with a side of chipotle aioli.', image: 'https://picsum.photos/seed/onionrings/400/300', hint: 'onion rings' },
+    { name: 'House Salad', price: '$5.99', description: 'Mixed greens with cherry tomatoes, cucumber, and a light vinaigrette.', image: 'https://picsum.photos/seed/housesalad/400/300', hint: 'fresh salad' },
   ],
 };
 
 const galleryImages = [
-    { id: 'g1', src: 'https://picsum.photos/seed/burger1/600/400', alt: 'Burger and fries meal', hint: 'burger meal' },
-    { id: 'g2', src: 'https://picsum.photos/seed/burger2/600/400', alt: 'Customers enjoying food', hint: 'people eating' },
-    { id: 'g3', src: 'https://picsum.photos/seed/burger3/600/400', alt: 'Close up of a burger', hint: 'burger closeup' },
-    { id: 'g4', src: 'https://picsum.photos/seed/burger4/600/400', alt: 'Interior of the cafe', hint: 'cafe interior' },
-    { id: 'g5', src: 'https://picsum.photos/seed/coffee1/600/400', alt: 'Latte art', hint: 'latte art' },
-    { id: 'g6', src: 'https://picsum.photos/seed/coffee2/600/400', alt: 'Cafe ambiance', hint: 'cozy cafe' },
+    { id: 'g1', src: 'https://picsum.photos/seed/burgermeal/600/400', alt: 'Burger and fries meal', hint: 'burger meal' },
+    { id: 'g2', src: 'https://picsum.photos/seed/peopleeating/600/400', alt: 'Customers enjoying food', hint: 'people eating' },
+    { id: 'g3', src: 'https://picsum.photos/seed/burgerclose/600/400', alt: 'Close up of a burger', hint: 'burger closeup' },
+    { id: 'g4', src: 'https://picsum.photos/seed/cafeinterior/600/400', alt: 'Interior of the cafe', hint: 'cafe interior' },
+    { id: 'g5', src: 'https://picsum.photos/seed/latte/600/400', alt: 'Latte art', hint: 'latte art' },
+    { id: 'g6', src: 'https://picsum.photos/seed/cozycafe/600/400', alt: 'Cafe ambiance', hint: 'cozy cafe' },
 ]
 
 const SectionWrapper: React.FC<{ id: string; children: React.ReactNode; className?: string }> = ({ id, children, className }) => {
@@ -94,7 +94,7 @@ export default function BurgerCafePage() {
       {/* Hero Section */}
       <section ref={heroRef} id="home" className="relative h-screen flex items-center justify-center text-center overflow-hidden">
           <Image
-            src="https://picsum.photos/seed/b-hero/1920/1080"
+            src="https://picsum.photos/seed/b-hero-burger/1920/1080"
             alt="Delicious burger on a table"
             fill
             priority
@@ -111,7 +111,7 @@ export default function BurgerCafePage() {
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold text-lg px-10 py-6 transition-transform hover:scale-105" onClick={handleScrollTo('#menu')}>
                   View Menu
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-black font-bold text-lg px-10 py-6 transition-transform hover:scale-105">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-black font-bold text-lg px-10 py-6 transition-transform hover:scale-105" onClick={handleScrollTo('#booking')}>
                   Book a Table
               </Button>
           </div>
@@ -131,7 +131,7 @@ export default function BurgerCafePage() {
                 </p>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl shadow-yellow-500/10 group">
-                <Image src="https://picsum.photos/seed/b-about/800/600" alt="The team at The Burger Joint" fill className="object-cover transition-transform duration-500 group-hover:scale-110" data-ai-hint="restaurant team"/>
+                <Image src="https://picsum.photos/seed/cafe-team/800/600" alt="The team at The Burger Joint" fill className="object-cover transition-transform duration-500 group-hover:scale-110" data-ai-hint="restaurant team"/>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all duration-300"></div>
             </div>
         </div>
