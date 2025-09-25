@@ -14,7 +14,7 @@ const aboutItems = [
   {
     icon: Target,
     title: 'Vision',
-    description: 'To pursue Entrepreneurship and launch innovative startups that solve real-world problems.',
+    description: 'My vision is to empower small businesses with technology and build startups that create jobs and long-term impact for society',
   },
   {
     icon: Rocket,
