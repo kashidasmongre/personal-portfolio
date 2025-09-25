@@ -1,6 +1,6 @@
 "use client";
 
-import { CodeXml, Store, BriefcaseBusiness, Rocket } from 'lucide-react';
+import { CodeXml, BriefcaseBusiness, Bot, Palette, ShoppingCart, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
@@ -8,24 +8,34 @@ import { cn } from '@/lib/utils';
 const services = [
   {
     icon: CodeXml,
-    title: 'Website Development',
-    description: 'Professional and responsive websites for businesses.',
+    title: 'Website & Online Presence',
+    description: 'Business website design & development, landing pages, online portfolios.',
   },
   {
     icon: BriefcaseBusiness,
-    title: 'Business Consultancy',
-    description: 'Guiding small businesses with smart strategies and digital growth plans.',
+    title: 'Business Consulting',
+    description: 'Market research, competitor analysis, business process improvement, pricing strategies.',
   },
   {
-    icon: Store,
-    title: 'Google Business Profile Setup',
-    description: 'Helping local businesses get discovered online.',
+    icon: Bot,
+    title: 'Tech & Tools Support',
+    description: 'Automation of business tasks, data management & reporting, CRM setup.',
   },
   {
-    icon: Rocket,
-    title: 'Digital Tools Integration',
-    description: 'Setting up billing, inventory, and automation tools.',
+    icon: Palette,
+    title: 'Branding & Digital Assets',
+    description: 'Logo & brand identity design, flyers, brochures, product catalogs.',
   },
+  {
+    icon: ShoppingCart,
+    title: 'E-Commerce Support',
+    description: 'Online store setup, product listing, payment integration, checkout optimization.',
+  },
+  {
+    icon: Users,
+    title: 'Training & Workshops',
+    description: 'Staff training on business tools and website management.',
+  }
 ];
 
 const Services = () => {
@@ -38,8 +48,11 @@ const Services = () => {
             What I Do
             <span className={cn("absolute -bottom-2 left-0 w-full h-1 bg-primary transition-all duration-1000 delay-300", isVisible ? "scale-x-100" : "scale-x-0")} style={{transformOrigin: 'left'}}/>
           </h2>
+           <p className={cn("mt-4 max-w-3xl mx-auto text-muted-foreground transition-opacity duration-700 delay-200", isVisible ? "opacity-100" : "opacity-0")}>
+            I am a BBA student and a business technology consultant. I provide the following services to small and medium businesses. My focus is on providing smart and efficient tech and consulting solutions that help businesses grow.
+          </p>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={index}
