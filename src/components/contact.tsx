@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useAnimation } from "@/hooks/use-animation";
 import { cn } from "@/lib/utils";
+import { Mail } from "lucide-react";
 
 const initialState: {
   type: string;
@@ -142,6 +143,17 @@ const Contact = () => {
             </div>
             <SubmitButton />
           </form>
+           <div className="relative my-6 flex items-center">
+            <div className="flex-grow border-t border-border"></div>
+            <span className="flex-shrink mx-4 text-muted-foreground text-sm">OR</span>
+            <div className="flex-grow border-t border-border"></div>
+          </div>
+           <Button variant="outline" className="w-full group" asChild>
+            <a href="mailto:kashidasmongre.x@gmail.com">
+              <Mail className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
+              Email Me Directly
+            </a>
+          </Button>
         </div>
       </div>
     </section>
