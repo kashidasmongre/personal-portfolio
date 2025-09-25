@@ -19,7 +19,7 @@ const workReasons = [
   {
     icon: Building,
     title: 'Corporate Exposure',
-    description: '6+ months in a BPO handling digital payments via M-Pokket app, interacting directly with business owners and customers.',
+    description: '6+ months in a BPO handling digital payments via a finance app, interacting directly with business owners and customers.',
   },
   {
     icon: Lightbulb,
