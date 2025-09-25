@@ -60,7 +60,7 @@ const Contact = () => {
                     <a href="https://www.linkedin.com/in/kashi-das-mongre-9495b121a" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                         <Linkedin className="h-6 w-6" />
                     </a>
-                    <a href="https://github.com/Kashi-Das-Mongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href="https://github.com/kashidasmongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                         <Github className="h-6 w-6" />
                     </a>
                     <a href="https://x.com/Kashi_Mongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
