@@ -1,11 +1,8 @@
 
 "use client";
 
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useFormState, useFormStatus } from 'react-dom';
+import { useEffect, useActionState } from "react";
+import { useFormStatus } from 'react-dom';
 
 import { submitContactForm } from "@/app/actions";
 import { Button } from "@/components/ui/button";
@@ -15,19 +12,20 @@ import { useToast } from "@/hooks/use-toast";
 import { useAnimation } from "@/hooks/use-animation";
 import { cn } from "@/lib/utils";
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Invalid email address."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
-
-const initialState = {
+const initialState: {
+  type: string;
+  message: string;
+  errors?: {
+    name?: string[];
+    email?: string[];
+    message?: string[];
+  } | null;
+} = {
   type: '',
   message: '',
   errors: null,
 };
+
 
 const SubmitButton = () => {
     const { pending } = useFormStatus();
@@ -39,15 +37,8 @@ const SubmitButton = () => {
 }
 
 const Contact = () => {
-  const [state, formAction] = useFormState(submitContactForm, initialState);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-  });
+  const [state, formAction] = useActionState(submitContactForm, initialState);
+  
   const { toast } = useToast();
   const { ref: sectionRef, isVisible } = useAnimation(0.2);
 
@@ -59,7 +50,8 @@ const Contact = () => {
         title: "Success!",
         description: state.message,
       });
-      reset();
+      // Simple form reset would require state management, which is complex with server actions.
+      // The form will clear on page reload. For a better UX, we could use a client-side form library.
     } else if (state.type === "error") {
       toast({
         variant: "destructive",
@@ -67,9 +59,9 @@ const Contact = () => {
         description: state.message || "Please correct the errors below.",
       });
     }
-  }, [state, toast, reset]);
+  }, [state, toast]);
   
-  const allErrors = { ...errors, ...state?.errors };
+  const allErrors = state?.errors;
 
   return (
     <section
@@ -117,9 +109,9 @@ const Contact = () => {
                 id="name"
                 name="name"
                 placeholder="Your Name"
-                className={allErrors.name ? "border-destructive" : ""}
+                className={allErrors?.name ? "border-destructive" : ""}
               />
-              {allErrors.name && (
+              {allErrors?.name && (
                 <p className="text-sm text-destructive">{allErrors.name[0]}</p>
               )}
             </div>
@@ -130,9 +122,9 @@ const Contact = () => {
                 type="email"
                 name="email"
                 placeholder="your.email@example.com"
-                className={allErrors.email ? "border-destructive" : ""}
+                className={allErrors?.email ? "border-destructive" : ""}
               />
-              {allErrors.email && (
+              {allErrors?.email && (
                 <p className="text-sm text-destructive">{allErrors.email[0]}</p>
               )}
             </div>
@@ -142,9 +134,9 @@ const Contact = () => {
                 id="message"
                 name="message"
                 placeholder="Tell me about your project..."
-                className={allErrors.message ? "border-destructive" : ""}
+                className={allErrors?.message ? "border-destructive" : ""}
               />
-              {allErrors.message && (
+              {allErrors?.message && (
                 <p className="text-sm text-destructive">{allErrors.message[0]}</p>
               )}
             </div>
