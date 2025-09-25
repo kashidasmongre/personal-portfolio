@@ -14,7 +14,7 @@ const aboutItems = [
   {
     icon: Target,
     title: 'Vision',
-    description: 'To pursue an MBA in Entrepreneurship and launch innovative startups that solve real-world problems.',
+    description: 'To pursue Entrepreneurship and launch innovative startups that solve real-world problems.',
   },
   {
     icon: Rocket,
