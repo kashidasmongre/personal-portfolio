@@ -1,12 +1,13 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 
 export type Project = {
   id: string;
@@ -24,7 +25,7 @@ const projects: Project[] = [
     title: 'Burger Café Website',
     description: 'A modern, responsive website for a local burger joint to drive sales and engagement.',
     technologies: ['Next.js', 'React', 'ShadCN UI', 'Tailwind CSS'],
-    liveLink: '#',
+    liveLink: '/projects/burger-cafe',
     image: PlaceHolderImages.find(p => p.id === 'project-burger-cafe'),
     hint: 'burger cafe'
   },
@@ -33,7 +34,7 @@ const projects: Project[] = [
     title: 'Local Store Landing Page',
     description: 'A beautiful landing page designed to build an online identity and attract local customers.',
     technologies: ['Figma', 'Next.js', 'Tailwind CSS'],
-    liveLink: '#',
+    liveLink: '/projects/local-store',
     image: PlaceHolderImages.find(p => p.id === 'project-local-store'),
     hint: 'local store'
   },
@@ -42,7 +43,7 @@ const projects: Project[] = [
     title: 'Barber Shop Appointments',
     description: 'A stylish and functional website with an integrated appointment booking system.',
     technologies: ['React', 'Next.js', 'React Hook Form'],
-    liveLink: '#',
+    liveLink: '/projects/barber-shop',
     image: PlaceHolderImages.find(p => p.id === 'project-barber-shop'),
     hint: 'barber shop'
   },
@@ -51,7 +52,7 @@ const projects: Project[] = [
     title: 'Restaurant Table Reservations',
     description: 'A sophisticated web app for customers to view availability and book tables in real-time.',
     technologies: ['Next.js', 'Server Actions', 'Zod'],
-    liveLink: '#',
+    liveLink: '/projects/restaurant-booking',
     image: PlaceHolderImages.find(p => p.id === 'project-restaurant-booking'),
     hint: 'restaurant booking'
   },
@@ -73,7 +74,7 @@ const Projects = () => {
           {projects.map((project, index) => {
             const image = project.image;
             return (
-              <a
+              <Link
                 key={project.id}
                 href={project.liveLink}
                 target="_blank"
@@ -94,7 +95,10 @@ const Projects = () => {
                       />
                     )}
                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                        <ExternalLink className="w-12 h-12 text-white/70 transform scale-0 group-hover:scale-100 transition-transform duration-300"/>
+                        <div className="flex items-center gap-2 text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span>View Project</span>
+                            <ArrowRight className="w-5 h-5"/>
+                        </div>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
@@ -107,7 +111,7 @@ const Projects = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </a>
+              </Link>
             );
           })}
         </div>
