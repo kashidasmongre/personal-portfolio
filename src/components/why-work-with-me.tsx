@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, Users, Building, Lightbulb, UserCheck } from 'lucide-react';
+import { Briefcase, Users, Building, Lightbulb, UserCheck, Computer, GraduationCap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
@@ -22,9 +22,19 @@ const workReasons = [
     description: '6+ months in a BPO handling digital payments via a finance app, interacting directly with business owners and customers.',
   },
   {
+    icon: Computer,
+    title: 'Technical Expertise (ITI in COPA)',
+    description: 'Skilled in computer operations, basic IT solutions, and software handling, ensuring smooth management of digital tools for your business.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Academic Knowledge (BBA Student)',
+    description: 'Learning business management, strategy, and entrepreneurship, bringing a mix of practical and theoretical knowledge to every project.',
+  },
+  {
     icon: Lightbulb,
     title: 'Practical Solutions for Real Challenges',
-    description: 'Combining village-level insights with corporate experience, I provide tailored, effective solutions that help businesses grow efficiently.',
+    description: 'Combining village-level insights, corporate exposure, technical skills, and academic knowledge to provide tailored, effective solutions.',
   },
   {
     icon: UserCheck,
@@ -48,18 +58,9 @@ const WhyWorkWithMe = () => {
           {workReasons.map((item, index) => (
             <div
               key={index}
-              className={cn('transition-all duration-700 lg:col-span-1', workReasons.length === 5 && index >= 3 ? 'md:col-span-1 lg:col-span-1 lg:col-start-2' : 'md:col-span-1', workReasons.length === 5 && index === 4 ? 'lg:col-start-3' : '',
-              {'lg:col-start-auto': workReasons.length !== 5 || index < 3},
-              {'lg:col-start-2': workReasons.length === 5 && index === 3},
-              {'lg:col-start-auto': workReasons.length === 5 && index === 4},
-               'sm:last:col-start-auto',
-               'md:last:col-start-auto',
-               'lg:last:col-start-auto',
-
-              )}
-              style={{ transitionDelay: `${index * 200 + 300}ms` }}
+              className={cn('transition-all duration-700', isVisible ? `opacity-100 translate-y-0` : `opacity-0 translate-y-8`)}
+              style={{ transitionDelay: `${index * 150 + 300}ms` }}
             >
-               {workReasons.length === 5 && index === 3 && <div className="hidden lg:block lg:col-start-1"></div>}
               <Card className="glassmorphism h-full text-center transition-all duration-300 hover:border-primary hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
                 <CardHeader className="items-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
