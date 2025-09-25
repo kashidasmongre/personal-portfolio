@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, Users, Building, Lightbulb, UserCheck, Computer, GraduationCap } from 'lucide-react';
+import { Briefcase, Users, Building, Lightbulb, UserCheck, Computer, GraduationCap, Hourglass } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
@@ -74,6 +74,16 @@ const WhyWorkWithMe = () => {
               </Card>
             </div>
           ))}
+           <div
+              className={cn('transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
+              style={{ transitionDelay: `${workReasons.length * 150 + 300}ms` }}
+            >
+            <Card className="group glassmorphism flex h-full min-h-[292px] transform-gpu flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
+                <Hourglass className="h-12 w-12 text-primary transition-transform duration-300 group-hover:animate-spin" />
+                <CardTitle className="mt-4 text-xl">More Experience</CardTitle>
+                <p className="mt-2 text-muted-foreground">Coming Soon...</p>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
