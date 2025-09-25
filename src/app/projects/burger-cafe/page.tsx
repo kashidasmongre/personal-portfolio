@@ -14,29 +14,29 @@ import { useAnimation } from '@/hooks/use-animation';
 
 const menuItems = {
   burgers: [
-    { name: 'Classic Beef Burger', price: '$12.99', description: 'A juicy 1/3 lb beef patty with fresh lettuce, tomato, pickles, and our secret sauce.', image: 'https://picsum.photos/seed/gourmet-beef-burger/400/300', hint: 'classic burger' },
-    { name: 'Spicy Chicken Burger', price: '$11.99', description: 'Crispy fried chicken breast with a spicy kick, jalapeños, and cool ranch coleslaw.', image: 'https://picsum.photos/seed/crispy-chicken-burger/400/300', hint: 'chicken burger' },
-    { name: 'Veggie Supreme Burger', price: '$10.99', description: 'A delicious plant-based patty with avocado, sprouts, grilled onions, and vegan mayo.', image: 'https://picsum.photos/seed/gourmet-veggie-burger/400/300', hint: 'veggie burger' },
+    { name: 'The Classic', price: '$12.99', description: 'Our signature beef patty, cheddar, lettuce, tomato, and secret sauce.', image: 'https://picsum.photos/seed/classic-burger/400/300', hint: 'classic burger' },
+    { name: 'Bacon BBQ Burger', price: '$14.99', description: 'Smoky BBQ sauce, crispy bacon, onion rings, and pepper jack cheese.', image: 'https://picsum.photos/seed/bbq-bacon-burger/400/300', hint: 'bbq burger' },
+    { name: 'Mushroom Swiss', price: '$13.99', description: 'Sautéed mushrooms, melted swiss cheese, and a garlic aioli spread.', image: 'https://picsum.photos/seed/mushroom-swiss-burger/400/300', hint: 'mushroom burger' },
   ],
-  coffee: [
-    { name: 'Espresso', price: '$3.50', description: 'A concentrated shot of rich, dark coffee.', image: 'https://picsum.photos/seed/dark-espresso-shot/400/300', hint: 'espresso shot' },
-    { name: 'Latte', price: '$5.00', description: 'Smooth espresso with steamed milk and a light layer of foam.', image: 'https://picsum.photos/seed/artisanal-latte/400/300', hint: 'latte art' },
-    { name: 'Cappuccino', price: '$4.50', description: 'Equal parts espresso, steamed milk, and frothed milk.', image: 'https://picsum.photos/seed/frothy-cappuccino/400/300', hint: 'cappuccino coffee' },
+  specialty: [
+    { name: 'The Volcano', price: '$15.99', description: 'Spicy chorizo-infused patty, habanero salsa, and pepper jack cheese.', image: 'https://picsum.photos/seed/spicy-volcano-burger/400/300', hint: 'spicy burger' },
+    { name: 'Double Decker', price: '$18.99', description: 'Two all-beef patties, special sauce, lettuce, cheese, pickles, onions.', image: 'https://picsum.photos/seed/double-decker-burger/400/300', hint: 'double burger' },
+    { name: 'Veggie Delight', price: '$11.99', description: 'A gourmet plant-based patty with avocado and all the fixings.', image: 'https://picsum.photos/seed/veggie-burger-delight/400/300', hint: 'veggie burger' },
   ],
-  sides: [
-    { name: 'Loaded Fries', price: '$7.99', description: 'Golden fries topped with melted cheese, bacon bits, and green onions.', image: 'https://picsum.photos/seed/cheesy-loaded-fries/400/300', hint: 'loaded fries' },
-    { name: 'Onion Rings', price: '$6.99', description: 'Thick-cut and beer-battered, served with a side of chipotle aioli.', image: 'https://picsum.photos/seed/golden-onion-rings/400/300', hint: 'onion rings' },
-    { name: 'House Salad', price: '$5.99', description: 'Mixed greens with cherry tomatoes, cucumber, and a light vinaigrette.', image: 'https://picsum.photos/seed/fresh-garden-salad/400/300', hint: 'fresh salad' },
+  gourmet: [
+    { name: 'The Truffle Burger', price: '$19.99', description: 'Wagyu patty with black truffle aioli, arugula, and parmesan crisps.', image: 'https://picsum.photos/seed/truffle-gourmet-burger/400/300', hint: 'truffle burger' },
+    { name: 'Blue Cheese Burger', price: '$16.99', description: 'Crumbled blue cheese, caramelized onions, and a balsamic glaze.', image: 'https://picsum.photos/seed/blue-cheese-burger/400/300', hint: 'blue cheese burger' },
+    { name: 'Breakfast Burger', price: '$15.99', description: 'Topped with a fried egg, bacon, and cheddar on a brioche bun.', image: 'https://picsum.photos/seed/breakfast-egg-burger/400/300', hint: 'breakfast burger' },
   ],
 };
 
 const galleryImages = [
-    { id: 'g1', src: 'https://picsum.photos/seed/full-burger-meal/600/400', alt: 'Burger and fries meal', hint: 'burger meal' },
-    { id: 'g2', src: 'https://picsum.photos/seed/friends-eating-burgers/600/400', alt: 'Customers enjoying food', hint: 'people eating' },
-    { id: 'g3', src: 'https://picsum.photos/seed/extreme-burger-closeup/600/400', alt: 'Close up of a burger', hint: 'burger closeup' },
-    { id: 'g4', src: 'https://picsum.photos/seed/modern-cafe-interior/600/400', alt: 'Interior of the cafe', hint: 'cafe interior' },
-    { id: 'g5', src: 'https://picsum.photos/seed/beautiful-latte-art/600/400', alt: 'Latte art', hint: 'latte art' },
-    { id: 'g6', src: 'https://picsum.photos/seed/warm-cafe-ambiance/600/400', alt: 'Cafe ambiance', hint: 'cozy cafe' },
+    { id: 'g1', src: 'https://picsum.photos/seed/gallery-burger-1/600/400', alt: 'Juicy burger close-up', hint: 'burger closeup' },
+    { id: 'g2', src: 'https://picsum.photos/seed/gallery-burger-2/600/400', alt: 'A stack of burgers', hint: 'burger stack' },
+    { id: 'g3', src: 'https://picsum.photos/seed/gallery-burger-3/600/400', alt: 'Burger being prepared by chef', hint: 'chef burger' },
+    { id: 'g4', src: 'https://picsum.photos/seed/gallery-burger-4/600/400', alt: 'Extreme close-up of a loaded burger', hint: 'loaded burger' },
+    { id: 'g5', src: 'https://picsum.photos/seed/gallery-burger-5/600/400', alt: 'A perfectly assembled cheeseburger', hint: 'perfect cheeseburger' },
+    { id: 'g6', src: 'https://picsum.photos/seed/gallery-burger-6/600/400', alt: 'Another delicious burger view', hint: 'delicious burger' },
 ]
 
 const SectionWrapper: React.FC<{ id: string; children: React.ReactNode; className?: string }> = ({ id, children, className }) => {
@@ -94,12 +94,12 @@ export default function BurgerCafePage() {
       {/* Hero Section */}
       <section ref={heroRef} id="home" className="relative h-screen flex items-center justify-center text-center overflow-hidden">
           <Image
-            src="https://picsum.photos/seed/delicious-burger-hero/1920/1080"
+            src="https://picsum.photos/seed/epic-burger-background/1920/1080"
             alt="Delicious burger on a table"
             fill
             priority
             className="object-cover opacity-30 scale-105"
-            data-ai-hint="burger hero background"
+            data-ai-hint="epic burger"
           />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900/50" />
         <div className="relative z-10 p-4">
@@ -131,7 +131,7 @@ export default function BurgerCafePage() {
                 </p>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl shadow-yellow-500/10 group">
-                <Image src="https://picsum.photos/seed/cozy-burger-joint/800/600" alt="The cozy interior of The Burger Joint" fill className="object-cover transition-transform duration-500 group-hover:scale-110" data-ai-hint="restaurant interior"/>
+                <Image src="https://picsum.photos/seed/a-big-burger/800/600" alt="A big juicy burger" fill className="object-cover transition-transform duration-500 group-hover:scale-110" data-ai-hint="big burger"/>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all duration-300"></div>
             </div>
         </div>
@@ -262,4 +262,3 @@ export default function BurgerCafePage() {
 }
 
     
-
