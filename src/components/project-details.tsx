@@ -22,7 +22,7 @@ interface ProjectDetailsProps {
 
 export function ProjectDetails({ project }: ProjectDetailsProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
       <div>
         {project.image && (
           <Image
@@ -36,7 +36,6 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
         )}
       </div>
       <div className="flex flex-col">
-        <h2 className="text-3xl font-bold mb-2 text-primary">{project.title}</h2>
         <p className="text-muted-foreground mb-6">{project.description}</p>
         
         <h3 className="text-lg font-semibold mb-3">Technologies Used</h3>

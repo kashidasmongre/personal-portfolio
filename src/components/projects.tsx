@@ -97,6 +97,9 @@ const Projects = () => {
                         <Button variant="outline" className="w-full">View Details</Button>
                       </DialogTrigger>
                       <DialogContent className="sm:max-w-3xl">
+                        <DialogHeader>
+                          <DialogTitle>{project.title}</DialogTitle>
+                        </DialogHeader>
                         <ProjectDetails project={project} />
                       </DialogContent>
                     </Dialog>
