@@ -1,10 +1,9 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { useAnimation } from "@/hooks/use-animation";
 import { cn } from "@/lib/utils";
-import { Mail } from "lucide-react";
+import { Mail, Linkedin, Github, Twitter } from "lucide-react";
 
 const Contact = () => {
   const { ref: sectionRef, isVisible } = useAnimation(0.2);
@@ -38,7 +37,7 @@ const Contact = () => {
               isVisible ? "opacity-100" : "opacity-0"
             )}
           >
-            Have a project in mind or want to connect? Click the button below to send me an email directly.
+            Have a project in mind or want to connect? Reach out via email or find me on social media.
           </p>
         </div>
 
@@ -54,6 +53,21 @@ const Contact = () => {
               Email Me Directly
             </a>
           </Button>
+
+            <div className="mt-8">
+                <p className="text-sm text-muted-foreground mb-4">Or connect with me on:</p>
+                <div className="flex justify-center gap-6">
+                    <a href="https://www.linkedin.com/in/kashi-das-mongre-9495b121a" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Linkedin className="h-6 w-6" />
+                    </a>
+                    <a href="https://github.com/Kashi-Das-Mongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Github className="h-6 w-6" />
+                    </a>
+                    <a href="https://x.com/Kashi_Mongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Twitter className="h-6 w-6" />
+                    </a>
+                </div>
+            </div>
         </div>
       </div>
     </section>
