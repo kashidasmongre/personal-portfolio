@@ -19,7 +19,7 @@ const aboutItems = [
   {
     icon: Rocket,
     title: 'Mission',
-    description: 'To empower small businesses with affordable tech solutions and contribute to job creation in my community.',
+    description: 'My mission is to empower small businesses with technology, turning challenges into opportunities and ideas into startups. I aim to create sustainable growth, generate employment, and build solutions that leave a lasting impact on people’s lives',
   },
 ];
 
