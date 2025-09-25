@@ -1,6 +1,6 @@
 "use client";
 
-import { CodeXml, Store, Megaphone, Rocket } from 'lucide-react';
+import { CodeXml, Store, BriefcaseBusiness, Rocket } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
@@ -9,22 +9,22 @@ const services = [
   {
     icon: CodeXml,
     title: 'Website Development',
-    description: 'Creating stunning and functional websites for small businesses to establish a strong online presence.',
+    description: 'Professional and responsive websites for businesses.',
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: 'Business Consultancy',
+    description: 'Guiding small businesses with smart strategies and digital growth plans.',
   },
   {
     icon: Store,
-    title: 'Google Business',
-    description: 'Setting up and optimizing Google Business Profiles to boost local visibility and attract customers.',
-  },
-  {
-    icon: Megaphone,
-    title: 'Social Media Branding',
-    description: 'Building a cohesive brand identity across Instagram, Facebook, and LinkedIn to engage your audience.',
+    title: 'Google Business Profile Setup',
+    description: 'Helping local businesses get discovered online.',
   },
   {
     icon: Rocket,
-    title: 'Digital Tools & Automation',
-    description: 'Implementing smart digital tools to streamline operations and drive business growth efficiently.',
+    title: 'Digital Tools Integration',
+    description: 'Setting up billing, inventory, and automation tools.',
   },
 ];
 
