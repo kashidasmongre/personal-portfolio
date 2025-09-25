@@ -34,7 +34,7 @@ const Hero = () => {
               <span className="absolute top-0 left-0 w-full h-full bg-primary-foreground/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               <span className="relative">Hire Me</span>
             </Button>
-            <Button size="lg" variant="outline" className="group w-full sm:w-auto" onClick={() => handleScrollTo('#projects')}>
+            <Button size="lg" variant="outline" className="group w-full sm:w-auto" onClick={() => handleScrollTo('#about')}>
               View My Work <MoveRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
