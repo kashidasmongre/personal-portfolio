@@ -17,41 +17,41 @@ import { ProjectDetails, type Project } from './project-details';
 
 
 const projects: Project[] = [
-  { 
-    id: 'project-electrician', 
-    title: 'Local Electrician Website',
-    description: 'A professional, responsive website for a local electrician to showcase services, display testimonials, and capture leads through a simple contact form. Built to be fast, SEO-friendly, and easy for the client to manage.',
-    technologies: ['Next.js', 'React', 'Tailwind CSS', 'ShadCN UI'],
+  {
+    id: 'project-burger-cafe',
+    title: 'Burger Café Website',
+    description: 'A modern, responsive website for a local burger joint. Features an interactive menu, an easy-to-use online ordering system mockup, and a prominent contact section to drive sales and engagement.',
+    technologies: ['Next.js', 'React', 'ShadCN UI', 'Tailwind CSS'],
     liveLink: '#',
-    image: PlaceHolderImages.find(p => p.id === 'project-electrician'),
-    hint: 'electrician website'
-  },
-  { 
-    id: 'project-inventory', 
-    title: 'Small Business Inventory Manager',
-    description: 'A clean and simple web application for small retail shops to track product inventory. Features include adding new products, updating stock levels, and viewing a real-time inventory dashboard with low-stock alerts.',
-    technologies: ['React', 'Next.js (App Router)', 'ShadCN UI', 'Recharts'],
-    liveLink: '#',
-    image: PlaceHolderImages.find(p => p.id === 'project-inventory'),
-    hint: 'inventory dashboard'
-  },
-  { 
-    id: 'project-support-ticket', 
-    title: 'Customer Support Ticket Tool',
-    description: 'An internal tool for a small team to manage customer support requests. It allows agents to view, update, and close tickets in a centralized dashboard, improving response times and organization.',
-    technologies: ['Next.js', 'Server Actions', 'Zod', 'React Hook Form'],
-    liveLink: '#',
-    image: PlaceHolderImages.find(p => p.id === 'project-support-ticket'),
-    hint: 'customer support'
+    image: PlaceHolderImages.find(p => p.id === 'project-burger-cafe'),
+    hint: 'burger cafe'
   },
   {
-    id: 'project-payment-qr',
-    title: 'Dynamic QR Payment Generator',
-    description: 'A simple tool that generates a UPI QR code with a pre-filled amount. Useful for small vendors to quickly accept payments for specific items without needing the customer to manually enter the amount.',
-    technologies: ['JavaScript', 'HTML/CSS', 'QR Code Library'],
+    id: 'project-local-store',
+    title: 'Local Store Branding & Landing Page',
+    description: 'A complete branding package and a beautiful landing page for a small retail business. Designed to build a strong online identity, attract local customers, and provide key business information at a glance.',
+    technologies: ['Figma', 'Next.js', 'Tailwind CSS'],
     liveLink: '#',
-    image: PlaceHolderImages.find(p => p.id === 'project-payment-qr'),
-    hint: 'qr payment'
+    image: PlaceHolderImages.find(p => p.id === 'project-local-store'),
+    hint: 'local store'
+  },
+  {
+    id: 'project-barber-shop',
+    title: 'Barber Shop Appointment Booking',
+    description: 'A stylish and functional website for a barber shop, featuring a service menu and an integrated appointment booking system to streamline scheduling and reduce no-shows.',
+    technologies: ['React', 'Next.js', 'React Hook Form', 'ShadCN UI'],
+    liveLink: '#',
+    image: PlaceHolderImages.find(p => p.id === 'project-barber-shop'),
+    hint: 'barber shop'
+  },
+  {
+    id: 'project-restaurant-booking',
+    title: 'Restaurant Table Reservation System',
+    description: 'A sophisticated web application for a fine-dining restaurant that allows customers to view seating availability and book a table in real-time, enhancing the customer experience and optimizing restaurant operations.',
+    technologies: ['Next.js', 'Server Actions', 'Zod', 'React Day Picker'],
+    liveLink: '#',
+    image: PlaceHolderImages.find(p => p.id === 'project-restaurant-booking'),
+    hint: 'restaurant booking'
   },
 ];
 

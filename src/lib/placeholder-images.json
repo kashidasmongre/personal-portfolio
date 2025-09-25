@@ -29,6 +29,30 @@
       "description": "Dynamic QR code payment generator",
       "imageUrl": "https://images.unsplash.com/photo-1581250601918-6138c3769148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxxciUyMHBheW1lbnR8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "qr payment"
+    },
+    {
+      "id": "project-burger-cafe",
+      "description": "Website for a burger cafe",
+      "imageUrl": "https://images.unsplash.com/photo-1722125680299-783f98369451?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXJnZXIlMjBjYWZlfGVufDB8fHx8MTc1ODgxNTM1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "burger cafe"
+    },
+    {
+      "id": "project-local-store",
+      "description": "Branding for a local store",
+      "imageUrl": "https://images.unsplash.com/photo-1641209678164-a2eb4b565f60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsb2NhbCUyMHN0b3JlfGVufDB8fHx8MTc1ODcxMjI4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "local store"
+    },
+    {
+      "id": "project-barber-shop",
+      "description": "Website for a barber shop",
+      "imageUrl": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiYXJiZXIlMjBzaG9wfGVufDB8fHx8MTc1ODczODAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "barber shop"
+    },
+    {
+      "id": "project-restaurant-booking",
+      "description": "Restaurant table booking system",
+      "imageUrl": "https://images.unsplash.com/photo-1730463527882-efcad72b9d7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyZXN0YXVyYW50JTIwYm9va2luZ3xlbnwwfHx8fDE3NTg4MTUwNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "restaurant booking"
     }
   ]
 }
