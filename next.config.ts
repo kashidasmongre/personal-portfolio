@@ -30,16 +30,18 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'storage.googleapis.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'ik.imagekit.io',
         port: '',
         pathname: '/**',
       }
+    ],
+  },
+  devIndicators: {
+    buildActivity: false,
+  },
+  experimental: {
+    allowedDevOrigins: [
+      'https://6000-firebase-studio-1758803254782.cluster-y75up3teuvc62qmnwys4deqv6y.cloudworkstations.dev',
     ],
   },
 };
