@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export type Project = {
   id: string;
@@ -77,8 +77,6 @@ const Projects = () => {
               <Link
                 key={project.id}
                 href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={cn('group block transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
                 style={{ transitionDelay: `${index * 200 + 300}ms` }}
               >
