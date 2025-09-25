@@ -1,9 +1,11 @@
+
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useFormState, useFormStatus } from 'react-dom';
 
 import { submitContactForm } from "@/app/actions";
 import { Button } from "@/components/ui/button";
@@ -21,11 +23,27 @@ const contactSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
+const initialState = {
+  type: '',
+  message: '',
+  errors: null,
+};
+
+const SubmitButton = () => {
+    const { pending } = useFormStatus();
+    return (
+        <Button type="submit" disabled={pending} className="w-full">
+            {pending ? "Sending..." : "Send Message"}
+        </Button>
+    )
+}
+
 const Contact = () => {
-  const [state, formAction] = useActionState(submitContactForm, null);
+  const [state, formAction] = useFormState(submitContactForm, initialState);
   const {
     register,
-    formState: { errors, isSubmitting },
+    handleSubmit,
+    formState: { errors },
     reset,
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -34,7 +52,7 @@ const Contact = () => {
   const { ref: sectionRef, isVisible } = useAnimation(0.2);
 
   useEffect(() => {
-    if (!state) return;
+    if (!state || !state.type) return;
 
     if (state.type === "success") {
       toast({
@@ -46,10 +64,12 @@ const Contact = () => {
       toast({
         variant: "destructive",
         title: "Error",
-        description: state.message,
+        description: state.message || "Please correct the errors below.",
       });
     }
   }, [state, toast, reset]);
+  
+  const allErrors = { ...errors, ...state?.errors };
 
   return (
     <section
@@ -95,12 +115,12 @@ const Contact = () => {
               <label htmlFor="name" className="text-sm font-medium">Name</label>
               <Input
                 id="name"
-                {...register("name")}
+                name="name"
                 placeholder="Your Name"
-                className={errors.name ? "border-destructive" : ""}
+                className={allErrors.name ? "border-destructive" : ""}
               />
-              {errors.name && (
-                <p className="text-sm text-destructive">{errors.name.message}</p>
+              {allErrors.name && (
+                <p className="text-sm text-destructive">{allErrors.name[0]}</p>
               )}
             </div>
             <div className="space-y-2">
@@ -108,29 +128,27 @@ const Contact = () => {
               <Input
                 id="email"
                 type="email"
-                {...register("email")}
+                name="email"
                 placeholder="your.email@example.com"
-                className={errors.email ? "border-destructive" : ""}
+                className={allErrors.email ? "border-destructive" : ""}
               />
-              {errors.email && (
-                <p className="text-sm text-destructive">{errors.email.message}</p>
+              {allErrors.email && (
+                <p className="text-sm text-destructive">{allErrors.email[0]}</p>
               )}
             </div>
             <div className="space-y-2">
               <label htmlFor="message" className="text-sm font-medium">Message</label>
               <Textarea
                 id="message"
-                {...register("message")}
+                name="message"
                 placeholder="Tell me about your project..."
-                className={errors.message ? "border-destructive" : ""}
+                className={allErrors.message ? "border-destructive" : ""}
               />
-              {errors.message && (
-                <p className="text-sm text-destructive">{errors.message.message}</p>
+              {allErrors.message && (
+                <p className="text-sm text-destructive">{allErrors.message[0]}</p>
               )}
             </div>
-            <Button type="submit" disabled={isSubmitting} className="w-full">
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </Button>
+            <SubmitButton />
           </form>
         </div>
       </div>
