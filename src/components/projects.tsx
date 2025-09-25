@@ -2,25 +2,27 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Badge } from '@/components/ui/badge';
+import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
-import { ProjectDetails, type Project } from './project-details';
+import { ExternalLink } from 'lucide-react';
 
+export type Project = {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  liveLink: string;
+  image?: ImagePlaceholder;
+  hint?: string;
+};
 
 const projects: Project[] = [
   {
     id: 'project-burger-cafe',
     title: 'Burger Café Website',
-    description: 'A modern, responsive website for a local burger joint. Features an interactive menu, an easy-to-use online ordering system mockup, and a prominent contact section to drive sales and engagement.',
+    description: 'A modern, responsive website for a local burger joint to drive sales and engagement.',
     technologies: ['Next.js', 'React', 'ShadCN UI', 'Tailwind CSS'],
     liveLink: '#',
     image: PlaceHolderImages.find(p => p.id === 'project-burger-cafe'),
@@ -28,8 +30,8 @@ const projects: Project[] = [
   },
   {
     id: 'project-local-store',
-    title: 'Local Store Branding & Landing Page',
-    description: 'A complete branding package and a beautiful landing page for a small retail business. Designed to build a strong online identity, attract local customers, and provide key business information at a glance.',
+    title: 'Local Store Landing Page',
+    description: 'A beautiful landing page designed to build an online identity and attract local customers.',
     technologies: ['Figma', 'Next.js', 'Tailwind CSS'],
     liveLink: '#',
     image: PlaceHolderImages.find(p => p.id === 'project-local-store'),
@@ -37,18 +39,18 @@ const projects: Project[] = [
   },
   {
     id: 'project-barber-shop',
-    title: 'Barber Shop Appointment Booking',
-    description: 'A stylish and functional website for a barber shop, featuring a service menu and an integrated appointment booking system to streamline scheduling and reduce no-shows.',
-    technologies: ['React', 'Next.js', 'React Hook Form', 'ShadCN UI'],
+    title: 'Barber Shop Appointments',
+    description: 'A stylish and functional website with an integrated appointment booking system.',
+    technologies: ['React', 'Next.js', 'React Hook Form'],
     liveLink: '#',
     image: PlaceHolderImages.find(p => p.id === 'project-barber-shop'),
     hint: 'barber shop'
   },
   {
     id: 'project-restaurant-booking',
-    title: 'Restaurant Table Reservation System',
-    description: 'A sophisticated web application for a fine-dining restaurant that allows customers to view seating availability and book a table in real-time, enhancing the customer experience and optimizing restaurant operations.',
-    technologies: ['Next.js', 'Server Actions', 'Zod', 'React Day Picker'],
+    title: 'Restaurant Table Reservations',
+    description: 'A sophisticated web app for customers to view availability and book tables in real-time.',
+    technologies: ['Next.js', 'Server Actions', 'Zod'],
     liveLink: '#',
     image: PlaceHolderImages.find(p => p.id === 'project-restaurant-booking'),
     hint: 'restaurant booking'
@@ -63,7 +65,7 @@ const Projects = () => {
       <div className="container mx-auto">
         <div className="mb-12 text-center">
            <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
-            Projects & Startup Ideas
+            Projects
              <span className={cn("absolute -bottom-2 left-0 w-full h-1 bg-primary transition-all duration-1000 delay-300", isVisible ? "scale-x-100" : "scale-x-0")} style={{transformOrigin: 'left'}}/>
           </h2>
         </div>
@@ -71,13 +73,16 @@ const Projects = () => {
           {projects.map((project, index) => {
             const image = project.image;
             return (
-              <div
+              <a
                 key={project.id}
-                className={cn('transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn('group block transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
                 style={{ transitionDelay: `${index * 200 + 300}ms` }}
               >
-                <Card className="group glassmorphism h-full transform-gpu overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
-                  <CardHeader className="p-0">
+                <Card className="glassmorphism h-full transform-gpu overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
+                  <CardHeader className="p-0 relative">
                     {image && (
                       <Image
                         src={image.imageUrl}
@@ -88,24 +93,21 @@ const Projects = () => {
                         className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     )}
+                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                        <ExternalLink className="w-12 h-12 text-white/70 transform scale-0 group-hover:scale-100 transition-transform duration-300"/>
+                    </div>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <CardTitle className="text-xl mb-4">{project.title}</CardTitle>
+                    <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{project.description}</p>
-                     <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="outline" className="w-full">View Details</Button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-3xl">
-                        <DialogHeader>
-                          <DialogTitle>{project.title}</DialogTitle>
-                        </DialogHeader>
-                        <ProjectDetails project={project} />
-                      </DialogContent>
-                    </Dialog>
+                    <div className="flex flex-wrap gap-2">
+                        {project.technologies.map(tech => (
+                            <Badge key={tech} variant="secondary">{tech}</Badge>
+                        ))}
+                    </div>
                   </CardContent>
                 </Card>
-              </div>
+              </a>
             );
           })}
         </div>
