@@ -1,10 +1,9 @@
 "use client";
 
-import { useFormState } from "react-dom";
+import { useActionState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useEffect } from "react";
 
 import { submitContactForm } from "@/app/actions";
 import { Button } from "@/components/ui/button";
@@ -23,10 +22,9 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 const Contact = () => {
-  const [state, formAction] = useFormState(submitContactForm, null);
+  const [state, formAction] = useActionState(submitContactForm, null);
   const {
     register,
-    handleSubmit,
     formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormValues>({
