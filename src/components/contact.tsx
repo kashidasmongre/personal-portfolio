@@ -50,7 +50,7 @@ const Contact = () => {
         >
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href="tel:+91830505008">
+                <Link href="tel:+918305105008">
                   <Phone className="mr-2 h-4 w-4" /> Call Me
                 </Link>
               </Button>
