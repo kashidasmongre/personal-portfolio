@@ -2,7 +2,7 @@
 
 import { useAnimation } from "@/hooks/use-animation";
 import { cn } from "@/lib/utils";
-import { Phone, Mail, MessageCircle } from "lucide-react";
+import { MessageCircle, Linkedin, Twitter, Github } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
@@ -48,13 +48,27 @@ const Contact = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-               <Button asChild size="lg" className="w-full sm:w-auto bg-green-500 hover:bg-green-600">
-                <Link href="https://wa.me/91830505008" target="_blank">
-                  <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
-                </Link>
-              </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild size="lg" className="w-full sm:w-auto bg-green-500 hover:bg-green-600">
+              <Link href="https://wa.me/91830505008" target="_blank">
+                <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+              </Link>
+            </Button>
+          </div>
+          <div className="mt-8 flex justify-center gap-6">
+            <Link href="https://www.linkedin.com/in/kashi-das-mongre-9495b121a" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="h-6 w-6" />
+              <span className="sr-only">LinkedIn</span>
+            </Link>
+            <Link href="https://x.com/KashiDasMongre" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+              <Twitter className="h-6 w-6" />
+              <span className="sr-only">X</span>
+            </Link>
+            <Link href="https://github.com/kashidasmongre" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+              <Github className="h-6 w-6" />
+              <span className="sr-only">GitHub</span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
