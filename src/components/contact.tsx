@@ -1,10 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { useAnimation } from "@/hooks/use-animation";
 import { cn } from "@/lib/utils";
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
-import Link from "next/link";
+import { Linkedin, Github, Twitter } from "lucide-react";
 
 const Contact = () => {
   const { ref: sectionRef, isVisible } = useAnimation(0.2);
@@ -38,7 +36,7 @@ const Contact = () => {
               isVisible ? "opacity-100" : "opacity-0"
             )}
           >
-            Have a project in mind or want to connect? Reach out via email or find me on social media.
+            Have a project in mind or want to connect? Find me on social media.
           </p>
         </div>
 
@@ -48,15 +46,8 @@ const Contact = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          <Button size="lg" className="group w-full max-w-xs mx-auto" asChild>
-            <Link href="mailto:kashidasmongre.x@gmail.com">
-              <Mail className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
-              Email Me Directly
-            </Link>
-          </Button>
-
             <div className="mt-8">
-                <p className="text-sm text-muted-foreground mb-4">Or connect with me on:</p>
+                <p className="text-sm text-muted-foreground mb-4">Connect with me on:</p>
                 <div className="flex justify-center gap-6">
                     <a href="https://www.linkedin.com/in/kashi-das-mongre-9495b121a" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                         <Linkedin className="h-6 w-6" />
