@@ -2,7 +2,9 @@
 
 import { useAnimation } from "@/hooks/use-animation";
 import { cn } from "@/lib/utils";
-import { Linkedin, Github, Twitter } from "lucide-react";
+import { Phone, Mail, MessageCircle } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Contact = () => {
   const { ref: sectionRef, isVisible } = useAnimation(0.2);
@@ -36,7 +38,7 @@ const Contact = () => {
               isVisible ? "opacity-100" : "opacity-0"
             )}
           >
-            Have a project in mind or want to connect? Find me on social media.
+            Have a project in mind or want to connect? Reach out to me directly.
           </p>
         </div>
 
@@ -46,19 +48,22 @@ const Contact = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-            <div className="mt-8">
-                <p className="text-sm text-muted-foreground mb-4">Connect with me on:</p>
-                <div className="flex justify-center gap-6">
-                    <a href="https://www.linkedin.com/in/kashi-das-mongre-9495b121a" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                        <Linkedin className="h-6 w-6" />
-                    </a>
-                    <a href="https://github.com/kashidasmongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                        <Github className="h-6 w-6" />
-                    </a>
-                    <a href="https://x.com/Kashi_Mongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                        <Twitter className="h-6 w-6" />
-                    </a>
-                </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button asChild size="lg" className="w-full sm:w-auto">
+                <Link href="tel:+911234567890">
+                  <Phone className="mr-2 h-4 w-4" /> Call Me
+                </Link>
+              </Button>
+               <Button asChild size="lg" className="w-full sm:w-auto bg-green-500 hover:bg-green-600">
+                <Link href="https://wa.me/911234567890" target="_blank">
+                  <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+                <Link href="mailto:kashidasmongre.x@gmail.com">
+                  <Mail className="mr-2 h-4 w-4" /> Email Me
+                </Link>
+              </Button>
             </div>
         </div>
       </div>
