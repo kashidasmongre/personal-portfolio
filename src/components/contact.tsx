@@ -49,19 +49,9 @@ const Contact = () => {
           )}
         >
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href="tel:+918305105008">
-                  <Phone className="mr-2 h-4 w-4" /> Call Me
-                </Link>
-              </Button>
                <Button asChild size="lg" className="w-full sm:w-auto bg-green-500 hover:bg-green-600">
-                <Link href="https://wa.me/918305105008" target="_blank">
+                <Link href="https://wa.me/91830505008" target="_blank">
                   <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
-                <Link href="mailto:kashidasmongre.x@gmail.com">
-                  <Mail className="mr-2 h-4 w-4" /> Email Me
                 </Link>
               </Button>
             </div>
