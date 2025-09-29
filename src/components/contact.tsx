@@ -23,7 +23,7 @@ const Contact = () => {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
-            Work With Me
+            Start Your Project Today
             <span
               className={cn(
                 "absolute -bottom-2 left-0 w-full h-1 bg-primary transition-all duration-1000 delay-300",
@@ -38,7 +38,7 @@ const Contact = () => {
               isVisible ? "opacity-100" : "opacity-0"
             )}
           >
-            Have a project in mind or want to connect? Reach out to me directly.
+            Have a project in mind or want to connect? Reach out to me, a web developer based in Bhopal.
           </p>
         </div>
 

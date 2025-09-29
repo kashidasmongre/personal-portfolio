@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: title,
   description: description,
   keywords: ["Kashidas Mongre", "web developer", "portfolio", "Bhopal", "React developer", "JavaScript developer", "web designer", "freelance web developer"],
-  author: [{ name: 'Kashi Das Mongre' }],
+  authors: [{ name: 'Kashi Das Mongre' }],
   openGraph: {
     title: title,
     description: description,
@@ -61,7 +61,11 @@ const structuredData = {
     "https://x.com/KashiDasMongre",
     "https://github.com/kashidasmongre"
   ],
-  "skills": "Web Development, JavaScript, React, Next.js, HTML, CSS, Business Technology Consulting, Digital Solutions"
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Web Developer",
+    "skills": "Web Development, JavaScript, React, Next.js, HTML, CSS, Business Technology Consulting, Digital Solutions"
+  }
 };
 
 export default function RootLayout({

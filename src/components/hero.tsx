@@ -22,8 +22,8 @@ const Hero = () => {
       <div className="container z-10 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
         <div className={cn('space-y-6 text-center md:text-left transition-all duration-1000', isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10')}>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            <AnimatedText text="Kashi Das Mongre" />
-            <span className="block text-3xl sm:text-4xl lg:text-5xl text-primary mt-2">Web Developer Portfolio</span>
+            <AnimatedText text="Kashidas Mongre" />
+            <span className="block text-3xl sm:text-4xl lg:text-5xl text-primary mt-2">Web Developer from Bhopal</span>
           </h1>
           <p className={cn("text-lg text-primary sm:text-xl transition-opacity duration-1000 delay-500", isVisible ? 'opacity-100' : 'opacity-0')}>
             BBA Student | Entrepreneur | React Developer India
@@ -45,7 +45,7 @@ const Hero = () => {
           {profileImage && (
             <Image
               src={profileImage.imageUrl}
-              alt={profileImage.description}
+              alt="Kashidas Mongre - Web Developer Portfolio"
               width={800}
               height={800}
               data-ai-hint={profileImage.imageHint}

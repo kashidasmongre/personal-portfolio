@@ -9,7 +9,7 @@ const Footer = () => {
     <footer ref={ref} className="bg-background py-6">
       <div className="container mx-auto text-center">
         <p className={cn("text-sm text-muted-foreground transition-opacity duration-1000", isVisible ? "opacity-100" : "opacity-0")}>
-          © 2025 Kashi Das Mongre | Built with passion & vision.
+          © 2025 Kashi Das Mongre | Web Developer in Bhopal | Built with passion & vision.
         </p>
       </div>
     </footer>

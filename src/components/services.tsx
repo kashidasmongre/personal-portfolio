@@ -9,7 +9,7 @@ const services = [
   {
     icon: CodeXml,
     title: 'Website & Online Presence',
-    description: 'Business website design & development, landing pages, online portfolios.',
+    description: 'Custom business website design & development, landing pages, and online portfolios.',
   },
   {
     icon: BriefcaseBusiness,
@@ -28,7 +28,7 @@ const services = [
   },
   {
     icon: ShoppingCart,
-    title: 'E-Commerce Support',
+    title: 'E-Commerce Solutions',
     description: 'Online store setup, product listing, payment integration, checkout optimization.',
   },
   {
@@ -45,11 +45,11 @@ const Services = () => {
       <div className="container mx-auto">
         <div className="mb-12 text-center">
           <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
-            What I Do
+            Web Development Services I Offer
             <span className={cn("absolute -bottom-2 left-0 w-full h-1 bg-primary transition-all duration-1000 delay-300", isVisible ? "scale-x-100" : "scale-x-0")} style={{transformOrigin: 'left'}}/>
           </h2>
            <p className={cn("mt-4 max-w-3xl mx-auto text-muted-foreground transition-opacity duration-700 delay-200", isVisible ? "opacity-100" : "opacity-0")}>
-            I am a BBA student and a business technology consultant. I provide the following services to small and medium businesses. My focus is on providing smart and efficient tech and consulting solutions that help businesses grow.
+            As a freelance web developer in Bhopal, I provide smart and efficient tech and consulting solutions that help businesses grow.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">

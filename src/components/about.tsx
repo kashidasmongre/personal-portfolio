@@ -15,12 +15,12 @@ const aboutItems = [
   {
     icon: Target,
     title: 'Vision',
-    description: 'My vision is to empower small businesses with technology and build startups that create jobs and long-term impact for society',
+    description: 'My vision is to empower small businesses in Bhopal and across India with technology, and build startups that create jobs and long-term impact for society.',
   },
   {
     icon: Rocket,
     title: 'Mission',
-    description: 'My mission is to empower small businesses with tech and create startups that generate jobs and growth, leveraging my skills as a JavaScript developer.',
+    description: 'My mission is to deliver high-quality, freelance web development services, helping businesses succeed with a strong online presence.',
   },
 ];
 
