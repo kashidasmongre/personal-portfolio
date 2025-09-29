@@ -11,14 +11,15 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
-const title = "Kashi Das Mongre | BBA Student & Entrepreneur";
-const description = "The official portfolio of Kashi Das Mongre, a BBA Student and Aspiring Entrepreneur specializing in business technology consulting and digital solutions for small businesses.";
-const url = "https://kashidasmongre.com"; // Replace with your actual domain when you deploy
+const title = "Kashidas Mongre - Web Developer & Designer Portfolio | Bhopal";
+const description = "Kashidas Mongre - Professional Web Developer from Bhopal. Specialized in React, JavaScript, and modern web development. View my portfolio projects and contact for web development work.";
+const url = "https://kashidasmongre.com"; 
 
 export const metadata: Metadata = {
   title: title,
   description: description,
-  keywords: ["Kashi Das Mongre", "kashidasmongre", "portfolio", "BBA student", "entrepreneur", "business technology consultant", "digital solutions"],
+  keywords: ["Kashidas Mongre", "web developer", "portfolio", "Bhopal", "React developer", "JavaScript developer", "web designer", "freelance web developer"],
+  author: [{ name: 'Kashi Das Mongre' }],
   openGraph: {
     title: title,
     description: description,
@@ -26,10 +27,10 @@ export const metadata: Metadata = {
     url: url,
     images: [
       {
-        url: "https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400", // Using your profile picture for social sharing
+        url: "https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400", 
         width: 800,
         height: 800,
-        alt: "Kashi Das Mongre",
+        alt: "Kashi Das Mongre - Web Developer",
       },
     ],
   },
@@ -43,39 +44,24 @@ export const metadata: Metadata = {
 };
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "name": "Kashi Das Mongre",
-      "url": url,
-      "image": "https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400",
-      "jobTitle": "BBA Student & Entrepreneur",
-      "sameAs": [
-        "https://www.linkedin.com/in/kashi-das-mongre-9495b121a",
-        "https://x.com/KashiDasMongre",
-        "https://github.com/kashidasmongre"
-      ],
-      "knowsAbout": ["Business Technology Consulting", "Digital Solutions", "Web Development", "Entrepreneurship"]
-    },
-    {
-      "@type": "WebSite",
-      "url": url,
-      "name": "Kashi Das Mongre's Portfolio",
-      "publisher": {
-        "@type": "Person",
-        "name": "Kashi Das Mongre"
-      },
-       "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.google.com/search?q=site:{url}+%7Bsearch_term_string%7D"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
-  ]
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Kashidas Mongre",
+  "jobTitle": "Web Developer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bhopal",
+    "addressRegion": "Madhya Pradesh",
+    "addressCountry": "India"
+  },
+  "url": url,
+  "image": "https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400",
+  "sameAs": [
+    "https://www.linkedin.com/in/kashi-das-mongre-9495b121a",
+    "https://x.com/KashiDasMongre",
+    "https://github.com/kashidasmongre"
+  ],
+  "skills": "Web Development, JavaScript, React, Next.js, HTML, CSS, Business Technology Consulting, Digital Solutions"
 };
 
 export default function RootLayout({

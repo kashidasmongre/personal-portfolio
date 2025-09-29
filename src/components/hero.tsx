@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -21,13 +22,14 @@ const Hero = () => {
       <div className="container z-10 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
         <div className={cn('space-y-6 text-center md:text-left transition-all duration-1000', isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10')}>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            <AnimatedText text="Hi, I’m Kashi Das Mongre 👋" />
+            <AnimatedText text="Kashi Das Mongre" />
+            <span className="block text-3xl sm:text-4xl lg:text-5xl text-primary mt-2">Web Developer Portfolio</span>
           </h1>
           <p className={cn("text-lg text-primary sm:text-xl transition-opacity duration-1000 delay-500", isVisible ? 'opacity-100' : 'opacity-0')}>
-            BBA Student | Aspiring Entrepreneur | Tech-driven Innovator
+            BBA Student | Entrepreneur | React Developer India
           </p>
           <p className={cn("max-w-md mx-auto md:mx-0 text-muted-foreground transition-opacity duration-1000 delay-700", isVisible ? 'opacity-100' : 'opacity-0')}>
-            I help small businesses grow with digital and tech solutions.
+            I help small businesses in Bhopal and beyond grow with digital and tech solutions. View my freelance web developer portfolio.
           </p>
           <div className={cn("flex flex-col sm:flex-row items-center justify-center gap-4 md:justify-start transition-opacity duration-1000 delay-1000", isVisible ? 'opacity-100' : 'opacity-0')}>
             <Button size="lg" className="group w-full sm:w-auto relative overflow-hidden" onClick={() => handleScrollTo('#contact')}>
