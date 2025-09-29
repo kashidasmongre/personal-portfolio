@@ -10,9 +10,35 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
+const title = "Kashi Das Mongre | BBA Student & Entrepreneur";
+const description = "The official portfolio of Kashi Das Mongre, a BBA Student and Aspiring Entrepreneur specializing in business technology consulting and digital solutions for small businesses.";
+const url = "https://kashidasmongre.com"; // Replace with your actual domain when you deploy
+
 export const metadata: Metadata = {
-  title: "kashidasmongre",
-  description: 'Portfolio of Kashi Das Mongre, a BBA Student and Aspiring Entrepreneur.',
+  title: title,
+  description: description,
+  keywords: ["Kashi Das Mongre", "kashidasmongre", "portfolio", "BBA student", "entrepreneur", "business technology consultant", "digital solutions"],
+  openGraph: {
+    title: title,
+    description: description,
+    type: "website",
+    url: url,
+    images: [
+      {
+        url: "https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400", // Using your profile picture for social sharing
+        width: 800,
+        height: 800,
+        alt: "Kashi Das Mongre",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: ["https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400"],
+  },
+  metadataBase: new URL(url),
 };
 
 export default function RootLayout({
