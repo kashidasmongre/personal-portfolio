@@ -41,9 +41,6 @@ export default function BarberShopPage() {
 
   return (
     <div className="bg-zinc-900 text-stone-200 min-h-screen font-['Bebas_Neue',_cursive]">
-       <head>
-          <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
-       </head>
         <Link href="/" className="absolute top-4 left-4 z-20">
           <Button variant="outline" className="bg-black/50 text-white hover:bg-black/80 border-stone-600">
             <ArrowLeft className="mr-2 h-4 w-4" /> Back to Portfolio

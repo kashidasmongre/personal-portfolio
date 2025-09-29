@@ -69,11 +69,6 @@ export default function BurgerCafePage() {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen font-sans antialiased">
-       <head>
-         <title>The Burger Joint - Crave. Bite. Repeat.</title>
-         <meta name="description" content="Home of the Juiciest, Most Flavorful Creations. The Burger Joint combines the best of burgers and coffee in a cozy, modern atmosphere." />
-       </head>
-
         <Link href="/" className="fixed top-4 left-4 z-50 group">
           <Button variant="outline" className="bg-black/50 text-white hover:bg-yellow-500 hover:text-black border-yellow-500/50 transition-all duration-300">
             <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" /> Back to Portfolio
@@ -260,5 +255,3 @@ export default function BurgerCafePage() {
     </div>
   );
 }
-
-    
