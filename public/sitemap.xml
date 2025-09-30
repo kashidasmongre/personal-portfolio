@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kashidasmongre.com/</loc>
+    <lastmod>2024-07-26</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://kashidasmongre.com/projects/barber-shop</loc>
+    <lastmod>2024-07-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kashidasmongre.com/projects/burger-cafe</loc>
+    <lastmod>2024-07-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kashidasmongre.com/projects/local-store</loc>
+    <lastmod>2024-07-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kashidasmongre.com/projects/restaurant-booking</loc>
+    <lastmod>2024-07-26</lastmod>
+    <priority>0.80</priority>
+  </url>
+</urlset>
