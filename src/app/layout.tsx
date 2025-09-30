@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 const title = "Kashidas Mongre - Web Developer & Designer Portfolio | Bhopal";
 const description = "Kashidas Mongre - Professional Web Developer from Bhopal. Specialized in React, JavaScript, and modern web development. View my portfolio projects and contact for web development work.";
-const url = "https://kashidasmongre.com"; 
+const url = "https://kashidasmongre.vercel.app"; 
 
 export const metadata: Metadata = {
   title: title,

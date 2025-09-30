@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kashidasmongre.com/sitemap.xml
+Sitemap: https://kashidasmongre.vercel.app/sitemap.xml
