@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   keywords: ["Kashidas Mongre", "web developer", "portfolio", "Bhopal", "React developer", "JavaScript developer", "web designer", "freelance web developer"],
   authors: [{ name: 'Kashi Das Mongre', url: url }],
   metadataBase: new URL(url),
+  verification: {
+    google: "rUW2u3_ar0HTZEOMz_MC7qHgxQg-P5da404cK_ibYPk",
+  },
   openGraph: {
     title: title,
     description: description,
