@@ -19,7 +19,8 @@ export const metadata: Metadata = {
   title: title,
   description: description,
   keywords: ["Kashidas Mongre", "web developer", "portfolio", "Bhopal", "React developer", "JavaScript developer", "web designer", "freelance web developer"],
-  authors: [{ name: 'Kashi Das Mongre' }],
+  authors: [{ name: 'Kashi Das Mongre', url: url }],
+  metadataBase: new URL(url),
   openGraph: {
     title: title,
     description: description,
@@ -38,9 +39,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: title,
     description: description,
+    creator: "@KashiDasMongre",
     images: ["https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400"],
   },
-  metadataBase: new URL(url),
 };
 
 const structuredData = {
@@ -64,7 +65,7 @@ const structuredData = {
   "hasOccupation": {
     "@type": "Occupation",
     "name": "Web Developer",
-    "skills": "Web Development, JavaScript, React, Next.js, HTML, CSS, Business Technology Consulting, Digital Solutions"
+    "skills": "Web Development, JavaScript, React, Next.js, HTML, CSS, Business Technology Consulting, Digital Solutions, SEO Optimization"
   }
 };
 

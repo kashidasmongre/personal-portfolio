@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kashidasmongre.vercel.app/</loc>
-    <lastmod>2024-08-23</lastmod>
-    <priority>1.00</priority>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kashidasmongre.vercel.app/projects/burger-cafe</loc>
-    <lastmod>2024-08-23</lastmod>
-    <priority>0.80</priority>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kashidasmongre.vercel.app/projects/local-store</loc>
-    <lastmod>2024-08-23</lastmod>
-    <priority>0.80</priority>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kashidasmongre.vercel.app/projects/barber-shop</loc>
-    <lastmod>2024-08-23</lastmod>
-    <priority>0.80</priority>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kashidasmongre.vercel.app/projects/restaurant-booking</loc>
-    <lastmod>2024-08-23</lastmod>
-    <priority>0.80</priority>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
