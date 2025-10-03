@@ -7,6 +7,12 @@
       "imageHint": "professional man"
     },
     {
+      "id": "project-the-bakes",
+      "description": "Website for The Bakes bakery",
+      "imageUrl": "https://images.unsplash.com/photo-1541726634804-c3f329e34c04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYWtlcnklMjB3ZWJzaXRlfGVufDB8fHx8MTc1OTQ4NDUwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bakery website"
+    },
+    {
       "id": "project-electrician",
       "description": "Website for a local electrician",
       "imageUrl": "https://images.unsplash.com/photo-1467733238130-bb6846885316?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbGVjdHJpY2lhbiUyMHdlYnNpdGV8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",

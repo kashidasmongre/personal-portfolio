@@ -22,40 +22,13 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    id: 'project-burger-cafe',
-    title: 'Burger Café Website',
-    description: 'A modern, responsive website for a local burger joint to drive sales and engagement.',
-    technologies: ['Next.js', 'React', 'ShadCN UI', 'Tailwind CSS'],
-    liveLink: '/projects/burger-cafe',
-    image: PlaceHolderImages.find(p => p.id === 'project-burger-cafe'),
-    hint: 'burger cafe'
-  },
-  {
-    id: 'project-local-store',
-    title: 'Local Store Landing Page',
-    description: 'A beautiful landing page designed to build an online identity and attract local customers.',
-    technologies: ['Figma', 'Next.js', 'Tailwind CSS'],
-    liveLink: '/projects/local-store',
-    image: PlaceHolderImages.find(p => p.id === 'project-local-store'),
-    hint: 'local store'
-  },
-  {
-    id: 'project-barber-shop',
-    title: 'Barber Shop Appointments',
-    description: 'A stylish and functional website with an integrated appointment booking system.',
-    technologies: ['React', 'Next.js', 'React Hook Form'],
-    liveLink: '/projects/barber-shop',
-    image: PlaceHolderImages.find(p => p.id === 'project-barber-shop'),
-    hint: 'barber shop'
-  },
-  {
-    id: 'project-restaurant-booking',
-    title: 'Restaurant Table Reservations',
-    description: 'A sophisticated web app for customers to view availability and book tables in real-time.',
-    technologies: ['Next.js', 'Server Actions', 'Zod'],
-    liveLink: '/projects/restaurant-booking',
-    image: PlaceHolderImages.find(p => p.id === 'project-restaurant-booking'),
-    hint: 'restaurant booking'
+    id: 'project-the-bakes',
+    title: 'The Bakes - Bakery Website',
+    description: 'A delightful and responsive website for a local bakery, designed to showcase their delicious products and attract customers.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    liveLink: 'https://thebakes.vercel.app/',
+    image: PlaceHolderImages.find(p => p.id === 'project-the-bakes'),
+    hint: 'bakery website'
   },
 ];
 
@@ -75,9 +48,11 @@ const Projects = () => {
           {projects.map((project, index) => {
             const image = project.image;
             return (
-              <Link
+              <a
                 key={project.id}
                 href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn('group block transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
                 style={{ transitionDelay: `${index * 200 + 300}ms` }}
               >
@@ -110,7 +85,7 @@ const Projects = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </Link>
+              </a>
             );
           })}
         </div>
