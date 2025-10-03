@@ -30,6 +30,15 @@ const projects: Project[] = [
     image: PlaceHolderImages.find(p => p.id === 'project-the-bakes'),
     hint: 'bakery website'
   },
+  {
+    id: 'project-burger-cafe',
+    title: 'Burger Café Website',
+    description: 'A mouth-watering website for a burger cafe, complete with a dynamic menu and a bold, modern design.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    liveLink: 'https://bargerweb.vercel.app/',
+    image: PlaceHolderImages.find(p => p.id === 'project-burger-cafe'),
+    hint: 'burger cafe'
+  },
 ];
 
 const Projects = () => {
