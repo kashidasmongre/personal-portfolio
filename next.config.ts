@@ -34,6 +34,12 @@ const nextConfig: NextConfig = {
         hostname: 'ik.imagekit.io',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ruqtxdl2vrxue2xu.public.blob.vercel-storage.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
