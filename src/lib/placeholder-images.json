@@ -9,7 +9,7 @@
     {
       "id": "project-the-bakes",
       "description": "Website for The Bakes bakery",
-      "imageUrl": "https://ruqtxdl2vrxue2xu.public.blob.vercel-storage.com/Screenshot%202025-10-03%20151532.png",
+      "imageUrl": "https://ruqtxdl2vrxue2xu.public.blob.vercel-storage.com/Screenshot%202025-10-03%20151311.png",
       "imageHint": "bakery website"
     },
     {
@@ -51,13 +51,13 @@
     {
       "id": "project-barber-shop",
       "description": "Website for a barber shop",
-      "imageUrl": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiYXJiZXIlMjBzaG9wfGVufDB8fHx8MTc1ODczODAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiYXJiZXIlMjBzaG9wfGVufDB8fHx8MTc1ODczODAwNHww&ixlib_rb-4.1.0&q=80&w=1080",
       "imageHint": "barber shop"
     },
     {
       "id": "project-restaurant-booking",
       "description": "Restaurant table booking system",
-      "imageUrl": "https://images.unsplash.com/photo-1730463527882-efcad72b9d7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyZXN0YXVyYW50JTIwYm9va2luZ3xlbnwwfHx8fDE3NTg4MTUwNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1730463527882-efcad72b9d7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyZXN0YXVyYW50JTIwYm9va2luZ3xlbnwwfHx8fDE3NTg4MTUwNTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "restaurant booking"
     }
   ]
