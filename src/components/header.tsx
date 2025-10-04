@@ -1,14 +1,16 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Portfolio' },
+  { href: '/#about', label: 'About', isExternal: false },
+  { href: '/web-development', label: 'Services', isExternal: false },
+  { href: '/#projects', label: 'Portfolio', isExternal: false },
 ];
 
 const Header = () => {
@@ -24,10 +26,48 @@ const Header = () => {
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('/#')) {
+        e.preventDefault();
+        const targetId = href.substring(2);
+        
+        if (window.location.pathname !== '/') {
+            window.location.href = `/${href.substring(1)}`;
+        } else {
+            const targetElement = document.getElementById(targetId);
+            targetElement?.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     setIsMenuOpen(false);
   };
+  
+    const renderNavLink = (link: typeof navLinks[0], isMobile: boolean = false) => {
+    const className = isMobile 
+      ? "w-full text-center text-lg font-medium text-foreground/80 transition-colors hover:text-primary"
+      : "text-sm font-medium text-foreground/80 transition-colors hover:text-primary";
+
+    if (link.isExternal) {
+      return (
+        <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+          {link.label}
+        </a>
+      );
+    }
+    
+    if (link.href.startsWith('/#')) {
+        return (
+            <a href={link.href} onClick={(e) => handleLinkClick(e, link.href)} className={className}>
+                {link.label}
+            </a>
+        );
+    }
+
+    return (
+      <Link href={link.href} onClick={() => setIsMenuOpen(false)} className={className}>
+        {link.label}
+      </Link>
+    );
+  };
+
 
   return (
     <header
@@ -37,21 +77,14 @@ const Header = () => {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#" className="font-headline text-2xl font-bold text-glow-primary">
+        <a href="/#home" onClick={(e) => handleLinkClick(e, '/#home')} className="font-headline text-2xl font-bold text-glow-primary">
           KDM
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
-            >
-              {link.label}
-            </a>
+             renderNavLink(link)
           ))}
-          <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>
+          <a href="/#contact" onClick={(e) => handleLinkClick(e, '/#contact')}>
             <Button size="sm">Hire Me</Button>
           </a>
         </nav>
@@ -70,16 +103,9 @@ const Header = () => {
       >
         <nav className="flex flex-col items-center gap-6 p-8">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleLinkClick(e, link.href)}
-              className="w-full text-center text-lg font-medium text-foreground/80 transition-colors hover:text-primary"
-            >
-              {link.label}
-            </a>
+            renderNavLink(link, true)
           ))}
-          <a href="#contact" className='w-full' onClick={(e) => handleLinkClick(e, '#contact')}>
+          <a href="/#contact" className='w-full' onClick={(e) => handleLinkClick(e, '/#contact')}>
             <Button className='w-full'>Hire Me</Button>
           </a>
         </nav>
