@@ -1,4 +1,3 @@
-
 "use client";
 
 import { CodeXml, BriefcaseBusiness, Bot, Palette, ShoppingCart, Users } from 'lucide-react';
@@ -12,31 +11,37 @@ const services = [
     icon: CodeXml,
     title: 'Website & Online Presence',
     description: 'Custom business website design & development, landing pages, and online portfolios.',
+    href: '/web-development'
   },
   {
     icon: BriefcaseBusiness,
     title: 'Business Consulting',
     description: 'Market research, competitor analysis, business process improvement, pricing strategies.',
+    href: '/business-consulting'
   },
   {
     icon: Bot,
     title: 'Tech & Tools Support',
     description: 'Automation of business tasks, data management & reporting, CRM setup.',
+    href: '/tech-support'
   },
   {
     icon: Palette,
     title: 'Branding & Digital Assets',
     description: 'Logo & brand identity design, flyers, brochures, product catalogs.',
+    href: '/branding-design'
   },
   {
     icon: ShoppingCart,
     title: 'E-Commerce Solutions',
     description: 'Online store setup, product listing, payment integration, checkout optimization.',
+    href: '/ecommerce-solutions'
   },
   {
     icon: Users,
     title: 'Training & Workshops',
     description: 'Staff training on business tools and website management.',
+    href: '/training-workshops'
   }
 ];
 
@@ -57,7 +62,7 @@ const Services = () => {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Link
-              href="/web-development"
+              href={service.href}
               key={index}
               className={cn('block transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
               style={{ transitionDelay: `${index * 150 + 300}ms` }}
