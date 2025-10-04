@@ -89,10 +89,10 @@ export default function SubscriptionPlans() {
   const { ref, isVisible } = useAnimation(0.2);
 
   return (
-    <section id="subscription-plans" ref={ref} className="bg-background">
-      <div className="container mx-auto">
-        <div className="mb-12 text-center">
-            <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
+    <section id="subscription-plans" ref={ref} className="py-16 sm:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+            <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
                 Website Solutions for Your Business
                 <span className={cn("absolute -bottom-2 left-0 w-full h-1 bg-primary transition-all duration-1000 delay-300", isVisible ? "scale-x-100" : "scale-x-0")} style={{transformOrigin: 'left'}}/>
             </h2>
@@ -102,7 +102,7 @@ export default function SubscriptionPlans() {
         </div>
 
         <Tabs defaultValue="cards" className="w-full">
-            <TabsList className="grid w-full max-w-sm mx-auto grid-cols-2 mb-8">
+            <TabsList className="grid w-full max-w-sm mx-auto grid-cols-2 mb-12">
                 <TabsTrigger value="cards">Card View</TabsTrigger>
                 <TabsTrigger value="table">Compare Plans</TabsTrigger>
             </TabsList>
@@ -119,7 +119,7 @@ export default function SubscriptionPlans() {
                                     {plan.isPopular && <div className="absolute top-0 right-0 text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-bl-lg rounded-tr-md">Most Popular</div>}
                                     <CardTitle className="pt-6">{plan.name}</CardTitle>
                                     <div className="text-4xl font-bold">{plan.price}<span className="text-lg font-normal text-muted-foreground">{plan.frequency}</span></div>
-                                    <CardDescription className="text-center h-12 pt-1">{plan.description}</CardDescription>
+                                    <CardDescription className="text-center min-h-12 pt-1">{plan.description}</CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-grow pt-2">
                                     <ul className="space-y-3">
@@ -144,20 +144,20 @@ export default function SubscriptionPlans() {
                     <table className="w-full min-w-[800px] comparison-table">
                         <thead>
                             <tr>
-                                <th className="w-1/4">Features</th>
-                                {plans.map(plan => <th key={plan.name} className="text-center">{plan.name}</th>)}
+                                <th className="w-1/4 px-4 py-3 text-left">Features</th>
+                                {plans.map(plan => <th key={plan.name} className="text-center px-4 py-3">{plan.name}</th>)}
                             </tr>
                         </thead>
                         <tbody>
                             {allFeatures.map(feature => (
                                 <tr key={feature}>
-                                    <td>{feature}</td>
+                                    <td className="px-4 py-3">{feature}</td>
                                     {plans.map(plan => (
-                                        <td key={plan.name} className="text-center">
+                                        <td key={plan.name} className="text-center px-4 py-3">
                                             {typeof planFeaturesMapping[plan.name][feature] === 'boolean' ? (
-                                                planFeaturesMapping[plan.anme]?.[feature] ? <Check className="mx-auto check-icon" /> : <X className="mx-auto cross-icon" />
+                                                planFeaturesMapping[plan.name]?.[feature] ? <Check className="mx-auto h-5 w-5 text-primary" /> : <X className="mx-auto h-5 w-5 text-muted-foreground" />
                                             ) : (
-                                                <span>{planFeaturesMapping[plan.name][feature]}</span>
+                                                <span className="text-sm">{planFeaturesMapping[plan.name][feature]}</span>
                                             )}
                                         </td>
                                     ))}

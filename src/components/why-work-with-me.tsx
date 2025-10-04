@@ -46,15 +46,15 @@ const workReasons = [
 const WhyWorkWithMe = () => {
     const { ref, isVisible } = useAnimation(0.2);
   return (
-    <section id="why-work-with-me" ref={ref} className="bg-background">
-      <div className="container mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
+    <section id="why-work-with-me" ref={ref} className="py-16 sm:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
             Why Work With Me
             <span className={cn("absolute -bottom-2 left-0 w-full h-1 bg-primary transition-all duration-1000 delay-300", isVisible ? "scale-x-100" : "scale-x-0")} style={{transformOrigin: 'left'}}/>
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {workReasons.map((item, index) => (
             <div
               key={index}
@@ -66,10 +66,10 @@ const WhyWorkWithMe = () => {
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <item.icon className="h-8 w-8 text-glow-primary" />
                   </div>
-                  <CardTitle>{item.title}</CardTitle>
+                  <CardTitle className="text-base h-12">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
                 </CardContent>
               </Card>
             </div>
@@ -78,7 +78,7 @@ const WhyWorkWithMe = () => {
               className={cn('transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
               style={{ transitionDelay: `${workReasons.length * 150 + 300}ms` }}
             >
-            <Card className="group glassmorphism flex h-full min-h-[292px] transform-gpu flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
+            <Card className="group glassmorphism flex h-full transform-gpu flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
                 <Hourglass className="h-12 w-12 text-primary transition-transform duration-300 group-hover:animate-spin" />
                 <CardTitle className="mt-4 text-xl">More Experience</CardTitle>
                 <p className="mt-2 text-muted-foreground">Coming Soon...</p>

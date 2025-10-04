@@ -18,12 +18,12 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" ref={sectionRef} className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      <div className="container z-10 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+    <section id="home" ref={sectionRef} className="relative flex min-h-screen items-center justify-center overflow-hidden py-16 sm:py-24 lg:py-32">
+      <div className="container z-10 grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
         <div className={cn('space-y-6 text-center md:text-left transition-all duration-1000', isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10')}>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             <AnimatedText text="Kashidas Mongre" />
-            <span className="block text-3xl sm:text-4xl lg:text-5xl text-primary mt-2">Web Developer from Bhopal</span>
+            <span className="block text-2xl sm:text-3xl lg:text-4xl text-primary mt-2">Web Developer from Bhopal</span>
           </h1>
           <p className={cn("text-lg text-primary sm:text-xl transition-opacity duration-1000 delay-500", isVisible ? 'opacity-100' : 'opacity-0')}>
             BBA Student | Entrepreneur | React Developer India
@@ -36,12 +36,12 @@ const Hero = () => {
               <span className="absolute top-0 left-0 w-full h-full bg-primary-foreground/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               <span className="relative">Hire Me</span>
             </Button>
-            <Button size="lg" variant="outline" className="group w-full sm-w-auto" onClick={() => handleScrollTo('#about')}>
+            <Button size="lg" variant="outline" className="group w-full sm:w-auto" onClick={() => handleScrollTo('#about')}>
               Learn More <MoveRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </div>
-        <div className={cn("relative mx-auto h-64 w-64 md:h-96 md:w-96 transition-all duration-1000 delay-300", isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90')}>
+        <div className={cn("relative mx-auto h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-96 transition-all duration-1000 delay-300", isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90')}>
           {profileImage && (
             <Image
               src={profileImage.imageUrl}

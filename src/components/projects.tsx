@@ -45,15 +45,15 @@ const Projects = () => {
     const { ref, isVisible } = useAnimation(0.2);
 
   return (
-    <section id="projects" ref={ref} className="bg-background">
-      <div className="container mx-auto">
-        <div className="mb-12 text-center">
-           <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
+    <section id="projects" ref={ref} className="py-16 sm:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+           <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
             My Recent Web Projects
              <span className={cn("absolute -bottom-2 left-0 w-full h-1 bg-primary transition-all duration-1000 delay-300", isVisible ? "scale-x-100" : "scale-x-0")} style={{transformOrigin: 'left'}}/>
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           {projects.map((project, index) => {
             const image = project.image;
             return (
@@ -74,7 +74,7 @@ const Projects = () => {
                         width={600}
                         height={400}
                         data-ai-hint={project.hint}
-                        className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-64 md:h-72"
                       />
                     )}
                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">

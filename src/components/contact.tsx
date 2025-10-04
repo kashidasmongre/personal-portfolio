@@ -14,13 +14,13 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="bg-card/30 bg-gradient-to-br from-background via-card/50 to-background"
+      className="py-16 sm:py-24 lg:py-32"
     >
-      <div className="container mx-auto">
-        <div className="mb-12 text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
           <h2
             className={cn(
-              "text-3xl font-bold tracking-tight sm:text-4xl inline-block relative transition-all duration-700",
+              "text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl inline-block relative transition-all duration-700",
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
@@ -45,7 +45,7 @@ const Contact = () => {
 
         <div
           className={cn(
-            "glassmorphism max-w-2xl mx-auto rounded-lg p-8 text-center transition-all duration-700 delay-300 hover:shadow-2xl hover:shadow-primary/20",
+            "glassmorphism max-w-2xl mx-auto rounded-lg p-6 sm:p-8 lg:p-10 text-center transition-all duration-700 delay-300 hover:shadow-2xl hover:shadow-primary/20",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >

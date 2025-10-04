@@ -42,10 +42,10 @@ const services = [
 const Services = () => {
     const { ref, isVisible } = useAnimation(0.2);
   return (
-    <section id="services" ref={ref} className="bg-card/30">
-      <div className="container mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
+    <section id="services" ref={ref} className="py-16 sm:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className={cn("text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl inline-block relative transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
             Services I offer
             <span className={cn("absolute -bottom-2 left-0 w-full h-1 bg-primary transition-all duration-1000 delay-300", isVisible ? "scale-x-100" : "scale-x-0")} style={{transformOrigin: 'left'}}/>
           </h2>
@@ -58,13 +58,12 @@ const Services = () => {
             <div
               key={index}
               className={cn('transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
-              style={{ transitionDelay: `${index * 200 + 300}ms` }}
+              style={{ transitionDelay: `${index * 150 + 300}ms` }}
             >
-              <Card className="group glassmorphism h-full transform-gpu overflow-hidden text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent/20">
-                <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-br from-accent/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <Card className="group glassmorphism h-full transform-gpu overflow-hidden text-center transition-all duration-300 hover:border-primary hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
                 <CardHeader className="relative items-center">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground">
-                    <service.icon className="h-8 w-8 transition-transform duration-300 group-hover:scale-110" />
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300">
+                    <service.icon className="h-8 w-8 text-glow-primary" />
                   </div>
                   <CardTitle>{service.title}</CardTitle>
                 </CardHeader>

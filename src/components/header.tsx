@@ -36,50 +36,54 @@ const Header = () => {
         isScrolled ? 'bg-background/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#" className="font-headline text-2xl font-bold text-glow-primary">
           KDM
         </a>
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="font-medium text-foreground/80 transition-colors hover:text-primary"
+              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
             >
               {link.label}
             </a>
           ))}
           <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>
-            <Button>Hire Me</Button>
+            <Button size="sm">Hire Me</Button>
           </a>
         </nav>
         <div className="md:hidden">
           <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <Menu className="h-6 w-6" />
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
       </div>
-      {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-background/95 backdrop-blur-lg md:hidden">
-          <nav className="flex flex-col items-center gap-4 p-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="w-full text-center text-lg font-medium text-foreground/80 transition-colors hover:text-primary"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a href="#contact" className='w-full' onClick={(e) => handleLinkClick(e, '#contact')}>
-                <Button className='w-full'>Hire Me</Button>
+      <div
+        className={cn(
+          "absolute top-full left-0 w-full bg-background/95 backdrop-blur-lg md:hidden",
+          "transition-transform duration-300 ease-in-out",
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        <nav className="flex flex-col items-center gap-6 p-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              className="w-full text-center text-lg font-medium text-foreground/80 transition-colors hover:text-primary"
+            >
+              {link.label}
             </a>
-          </nav>
-        </div>
-      )}
+          ))}
+          <a href="#contact" className='w-full' onClick={(e) => handleLinkClick(e, '#contact')}>
+            <Button className='w-full'>Hire Me</Button>
+          </a>
+        </nav>
+      </div>
     </header>
   );
 };
