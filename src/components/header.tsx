@@ -47,7 +47,7 @@ const Header = () => {
 
     if (link.isExternal) {
       return (
-        <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+        <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
           {link.label}
         </a>
       );
@@ -55,14 +55,14 @@ const Header = () => {
     
     if (link.href.startsWith('/#')) {
         return (
-            <a href={link.href} onClick={(e) => handleLinkClick(e, link.href)} className={className}>
+            <a key={link.href} href={link.href} onClick={(e) => handleLinkClick(e, link.href)} className={className}>
                 {link.label}
             </a>
         );
     }
 
     return (
-      <Link href={link.href} onClick={() => setIsMenuOpen(false)} className={className}>
+      <Link key={link.href} href={link.href} onClick={() => setIsMenuOpen(false)} className={className}>
         {link.label}
       </Link>
     );
