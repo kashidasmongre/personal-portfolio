@@ -52,21 +52,6 @@ export default function WebDevelopmentPage() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {offerings.map(item => (
-                    <div key={item.title} className="glassmorphism p-8 rounded-lg text-center transition-all duration-300 hover:border-primary hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
-                        <div className="flex justify-center mb-4">
-                            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                                <item.icon className="h-8 w-8 text-glow-primary" />
-                            </div>
-                        </div>
-                        <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                        <p className="text-lg font-semibold text-primary mb-3">{item.price}</p>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
-                    </div>
-                ))}
-            </div>
-
             <SubscriptionPlans />
 
              <div className="mt-20 text-center">
