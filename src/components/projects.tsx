@@ -35,7 +35,7 @@ const projects: Project[] = [
     title: 'Burger Café Website',
     description: 'A mouth-watering website for a burger cafe, complete with a dynamic menu and a bold, modern design.',
     technologies: ['Next.js', 'React', 'Tailwind CSS'],
-    liveLink: 'https://bargerweb.vercel.app/',
+    liveLink: 'https://burger-landing-peag.vercel.app/',
     image: PlaceHolderImages.find(p => p.id === 'project-burger-cafe'),
     hint: 'burger cafe'
   },
