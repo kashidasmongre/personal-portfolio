@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CodeXml, Palette, ShoppingCart, Bot } from 'lucide-react';
 import Particles from '@/components/particles';
+import SubscriptionPlans from '@/components/subscription-plans';
 
 const offerings = [
     {
@@ -65,6 +66,8 @@ export default function WebDevelopmentPage() {
                     </div>
                 ))}
             </div>
+
+            <SubscriptionPlans />
 
              <div className="mt-20 text-center">
                 <h2 className="text-2xl font-semibold mb-4">Ready to Start Your Project?</h2>

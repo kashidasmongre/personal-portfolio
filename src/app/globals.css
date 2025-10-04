@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,6 +85,30 @@
   
   .animate-slide-in-right {
     animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .comparison-table {
+    @apply border-separate border-spacing-0;
+  }
+
+  .comparison-table th, .comparison-table td {
+    @apply p-4 text-center border-b border-r border-border align-middle;
+  }
+
+  .comparison-table th:first-child, .comparison-table td:first-child {
+    @apply text-left sticky left-0 bg-background z-10;
+  }
+  
+  .comparison-table th {
+    @apply font-bold text-foreground border-t;
+  }
+
+  .comparison-table td:first-child {
+     @apply font-medium;
+  }
+
+  .comparison-table th:last-child, .comparison-table td:last-child {
+    @apply border-r-0;
   }
 }
 
