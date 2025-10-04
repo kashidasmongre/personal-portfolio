@@ -14,6 +14,7 @@ const poppins = Poppins({
 const title = "Kashidas Mongre - Web Developer & Designer Portfolio | Bhopal";
 const description = "Kashidas Mongre - Professional Web Developer from Bhopal. Specialized in React, JavaScript, and modern web development. View my portfolio projects and contact for web development work.";
 const url = "https://kashidasmongre.vercel.app"; 
+const faviconUrl = "https://ruqtxdl2vrxue2xu.public.blob.vercel-storage.com/Gemini_Generated_Image_q163gyq163gyq163.png";
 
 export const metadata: Metadata = {
   title: title,
@@ -21,6 +22,11 @@ export const metadata: Metadata = {
   keywords: ["Kashidas Mongre", "web developer", "portfolio", "Bhopal", "React developer", "JavaScript developer", "web designer", "freelance web developer"],
   authors: [{ name: 'Kashi Das Mongre', url: url }],
   metadataBase: new URL(url),
+  icons: {
+    icon: faviconUrl,
+    shortcut: faviconUrl,
+    apple: faviconUrl,
+  },
   verification: {
     google: "rUW2u3_ar0HTZEOMz_MC7qHgxQg-P5da404cK_ibYPk",
   },
