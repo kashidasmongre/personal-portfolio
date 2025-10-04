@@ -5,6 +5,7 @@ import { CodeXml, BriefcaseBusiness, Bot, Palette, ShoppingCart, Users } from 'l
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const services = [
   {
@@ -55,9 +56,10 @@ const Services = () => {
         </div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <div
+            <Link
+              href="/web-development"
               key={index}
-              className={cn('transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
+              className={cn('block transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
               style={{ transitionDelay: `${index * 150 + 300}ms` }}
             >
               <Card className="group glassmorphism h-full transform-gpu overflow-hidden text-center transition-all duration-300 hover:border-primary hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
@@ -71,7 +73,7 @@ const Services = () => {
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
               </Card>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
