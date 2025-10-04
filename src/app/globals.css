@@ -85,6 +85,25 @@
   .animate-slide-in-right {
     animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
+
+  .comparison-table th, .comparison-table td {
+    @apply p-4 text-left border-b border-border;
+  }
+  .comparison-table th {
+    @apply font-bold text-foreground;
+  }
+  .comparison-table td {
+    @apply text-muted-foreground;
+  }
+  .comparison-table .check-icon {
+    @apply text-green-500;
+  }
+   .comparison-table .cross-icon {
+    @apply text-red-500;
+  }
+  .comparison-table tbody tr:hover {
+    @apply bg-secondary/30;
+  }
 }
 
 @keyframes fade-in {
