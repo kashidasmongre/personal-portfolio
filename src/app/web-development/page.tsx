@@ -10,21 +10,25 @@ const offerings = [
     {
         icon: CodeXml,
         title: 'Custom Websites',
+        price: 'Starts at ₹1,500',
         description: 'Beautiful, responsive, and fast websites tailored to your business needs. From simple portfolios to complex business sites.'
     },
     {
         icon: ShoppingCart,
         title: 'E-Commerce Stores',
+        price: 'Starts at ₹5,000',
         description: 'Complete online store solutions, including product catalogs, secure payments, and inventory management to get you selling online.'
     },
     {
         icon: Palette,
         title: 'Branding & Design',
+        price: 'Starts at ₹2,000',
         description: 'Establish a strong brand identity with custom logos, color schemes, and digital assets that resonate with your audience.'
     },
     {
         icon: Bot,
         title: 'Automation & Tools',
+        price: 'Custom Pricing',
         description: 'Streamline your business operations with custom tools, CRM setups, and automation to save you time and money.'
     }
 ]
@@ -55,8 +59,9 @@ export default function WebDevelopmentPage() {
                                 <item.icon className="h-8 w-8 text-glow-primary" />
                             </div>
                         </div>
-                        <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                        <p className="text-muted-foreground">{item.description}</p>
+                        <h3 className="text-xl font-bold mb-1">{item.title}</h3>
+                        <p className="text-lg font-semibold text-primary mb-3">{item.price}</p>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
                     </div>
                 ))}
             </div>
