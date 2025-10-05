@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Kashi Das Mongre', url: url }],
   metadataBase: new URL(url),
   icons: {
-    icon: faviconUrl,
-    shortcut: faviconUrl,
-    apple: faviconUrl,
+    icon: [{ url: faviconUrl, type: 'image/png' }],
+    shortcut: [{ url: faviconUrl, type: 'image/png' }],
+    apple: [{ url: faviconUrl, type: 'image/png' }],
   },
   verification: {
     google: "rUW2u3_ar0HTZEOMz_MC7qHgxQg-P5da404cK_ibYPk",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: url,
     images: [
       {
-        url: "https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400", 
+        url: faviconUrl, 
         width: 800,
         height: 800,
         alt: "Kashi Das Mongre - Web Developer",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: title,
     description: description,
     creator: "@KashiDasMongre",
-    images: ["https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400"],
+    images: [faviconUrl],
   },
 };
 
@@ -65,7 +65,7 @@ const structuredData = {
     "addressCountry": "India"
   },
   "url": url,
-  "image": "https://ik.imagekit.io/mfj3864fw/Gemini_Generated_Image_q8hadbq8hadbq8ha.png?updatedAt=1758811335400",
+  "image": faviconUrl,
   "sameAs": [
     "https://www.linkedin.com/in/kashi-das-mongre-9495b121a",
     "https://x.com/KashiDasMongre",
@@ -86,7 +86,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
        <head>
-        <link rel="icon" href={faviconUrl} sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
