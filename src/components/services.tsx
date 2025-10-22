@@ -1,6 +1,6 @@
 "use client";
 
-import { CodeXml, BriefcaseBusiness, Bot, Palette, ShoppingCart, Users } from 'lucide-react';
+import { CodeXml, BriefcaseBusiness, Bot, Palette, ShoppingCart, Users, BrainCircuit } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
@@ -14,10 +14,10 @@ const services = [
     href: '/web-development'
   },
   {
-    icon: BriefcaseBusiness,
-    title: 'Business Consulting',
-    description: 'Market research, competitor analysis, business process improvement, pricing strategies.',
-    href: '/business-consulting'
+    icon: BrainCircuit,
+    title: 'AI & Automation',
+    description: 'Custom AI solutions, chatbots, and business process automation to enhance efficiency.',
+    href: '/tech-support'
   },
   {
     icon: Bot,
@@ -37,12 +37,6 @@ const services = [
     description: 'Online store setup, product listing, payment integration, checkout optimization.',
     href: '/ecommerce-solutions'
   },
-  {
-    icon: Users,
-    title: 'Training & Workshops',
-    description: 'Staff training on business tools and website management.',
-    href: '/training-workshops'
-  }
 ];
 
 const Services = () => {
