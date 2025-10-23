@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
 import ServicePageLayout from '@/components/service-page-layout';
-import SubscriptionPlans from '@/components/subscription-plans';
 import { CodeXml, Server, Store, Brush } from 'lucide-react';
 
 const offerings = [
@@ -37,9 +36,6 @@ export default function WebDevelopmentPage() {
         contactPrompt="Ready to Start Your Project?"
         serviceIcon={CodeXml}
       />
-      <div className="relative z-10">
-        <SubscriptionPlans />
-      </div>
     </>
   );
 }
