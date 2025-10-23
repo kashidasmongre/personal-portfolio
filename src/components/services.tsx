@@ -26,12 +26,6 @@ const services = [
     href: '/tech-support'
   },
   {
-    icon: Palette,
-    title: 'Branding & Digital Assets',
-    description: 'Logo & brand identity design, flyers, brochures, product catalogs.',
-    href: '/branding-design'
-  },
-  {
     icon: ShoppingCart,
     title: 'E-Commerce Solutions',
     description: 'Online store setup, product listing, payment integration, checkout optimization.',
