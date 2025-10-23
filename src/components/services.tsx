@@ -25,12 +25,6 @@ const services = [
     description: 'Automation of business tasks, data management & reporting, CRM setup.',
     href: '/tech-support'
   },
-  {
-    icon: ShoppingCart,
-    title: 'E-Commerce Solutions',
-    description: 'Online store setup, product listing, payment integration, checkout optimization.',
-    href: '/ecommerce-solutions'
-  },
 ];
 
 const Services = () => {
