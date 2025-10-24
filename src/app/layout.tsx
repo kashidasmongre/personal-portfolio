@@ -11,15 +11,15 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
-const title = "Kashidas Mongre - Web Developer & Designer Portfolio | Bhopal";
-const description = "Kashidas Mongre - Professional Web Developer from Bhopal. Specialized in React, JavaScript, and modern web development. View my portfolio projects and contact for web development work.";
+const title = "Kashidas Mongre - Web Developer & AI Expert in Bhopal";
+const description = "Professional Web Developer & AI Automation Expert in Bhopal. I build high-performance websites & AI-powered engines to help small businesses grow. 7-Day Trial.";
 const url = "https://kashidasmongre.vercel.app"; 
 const faviconUrl = "https://ruqtxdl2vrxue2xu.public.blob.vercel-storage.com/Gemini_Generated_Image_q163gyq163gyq163.png";
 
 export const metadata: Metadata = {
   title: title,
   description: description,
-  keywords: ["Kashidas Mongre", "web developer", "portfolio", "Bhopal", "React developer", "JavaScript developer", "web designer", "freelance web developer"],
+  keywords: ["web developer in Bhopal", "website design Bhopal", "AI automation services Bhopal", "freelance web developer Bhopal", "Next.js developer India", "React developer Bhopal", "AI chatbot developer India"],
   authors: [{ name: 'Kashi Das Mongre', url: url }],
   metadataBase: new URL(url),
   icons: {
@@ -40,9 +40,11 @@ export const metadata: Metadata = {
         url: faviconUrl, 
         width: 800,
         height: 800,
-        alt: "Kashi Das Mongre - Web Developer",
+        alt: "Kashi Das Mongre - Web Developer & AI Automation Expert in Bhopal",
       },
     ],
+    locale: 'en_IN',
+    siteName: 'Kashidas Mongre',
   },
   twitter: {
     card: "summary_large_image",
@@ -54,28 +56,76 @@ export const metadata: Metadata = {
 };
 
 const structuredData = {
-  "@context": "https://schema.org/",
-  "@type": "Person",
-  "name": "Kashidas Mongre",
-  "jobTitle": "Web Developer",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Bhopal",
-    "addressRegion": "Madhya Pradesh",
-    "addressCountry": "India"
-  },
-  "url": url,
-  "image": faviconUrl,
-  "sameAs": [
-    "https://www.linkedin.com/in/kashi-das-mongre-9495b121a",
-    "https://x.com/KashiDasMongre",
-    "https://github.com/kashidasmongre"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Web Developer",
-    "skills": "Web Development, JavaScript, React, Next.js, HTML, CSS, Business Technology Consulting, Digital Solutions, SEO Optimization"
-  }
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Kashidas Mongre",
+      "url": "https://kashidasmongre.vercel.app",
+      "sameAs": [
+        "https://www.linkedin.com/in/kashi-das-mongre-9495b121a",
+        "https://x.com/KashiDasMongre",
+        "https://github.com/kashidasmongre"
+      ],
+      "jobTitle": "Web Developer and AI Automation Expert",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Kashidas Mongre"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Kashidas Mongre - Web Development & AI Automation",
+      "image": faviconUrl,
+      "@id": "https://kashidasmongre.vercel.app",
+      "url": "https://kashidasmongre.vercel.app",
+      "telephone": "+91-8305105008",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Development Subscription",
+            "description": "Affordable monthly plans for custom website design, hosting, and maintenance with no setup fee."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI & WhatsApp Automation",
+            "description": "Custom AI chatbots and WhatsApp automation to capture leads and streamline business processes 24/7."
+          }
+        }
+      ]
+    }
+  ]
 };
 
 export default function RootLayout({
