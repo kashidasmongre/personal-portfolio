@@ -42,6 +42,26 @@ const projects: Project[] = [
     hint: 'burger cafe',
     altText: 'Custom website for a burger cafe in Bhopal with an online menu.'
   },
+  {
+    id: 'project-indique',
+    title: 'Indique - E-commerce Website',
+    description: 'A stylish and modern e-commerce platform for a fashion brand, featuring a clean design and seamless user experience.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    liveLink: 'https://indiquedemo.vercel.app/',
+    image: PlaceHolderImages.find(p => p.id === 'project-indique'),
+    hint: 'fashion website',
+    altText: 'E-commerce website for a fashion brand.'
+  },
+  {
+    id: 'project-influencer',
+    title: 'Influencer Portfolio',
+    description: 'A dynamic and engaging portfolio website for an influencer, designed to showcase their brand and content.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    liveLink: 'https://influencer-demo-sigma.vercel.app/',
+    image: PlaceHolderImages.find(p => p.id === 'project-influencer'),
+    hint: 'influencer portfolio',
+    altText: 'Portfolio website for an influencer.'
+  },
 ];
 
 const Projects = () => {
@@ -90,7 +110,7 @@ const Projects = () => {
                   <CardContent className="p-6">
                     <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap justify-center gap-2">
                         {project.technologies.map(tech => (
                             <Badge key={tech} variant="secondary">{tech}</Badge>
                         ))}

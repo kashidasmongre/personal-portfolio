@@ -21,7 +21,7 @@
     {
       "id": "project-electrician",
       "description": "Website for a local electrician",
-      "imageUrl": "https://images.unsplash.com/photo-1467733238130-bb6846885316?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbGVjdHJpY2lhbiUyMHdlYnNpdGV8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1467733238130-bb6846885316?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbGVjdHJpY2lhbiUyMHdlYnNpdGV8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "electrician website"
     },
     {
@@ -59,6 +59,18 @@
       "description": "Restaurant table booking system",
       "imageUrl": "https://images.unsplash.com/photo-1730463527882-efcad72b9d7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyZXN0YXVyYW50JTIwYm9va2luZ3xlbnwwfHx8fDE3NTg4MTUwNTV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "restaurant booking"
+    },
+    {
+      "id": "project-indique",
+      "description": "Indique E-commerce Website",
+      "imageUrl": "https://images.unsplash.com/photo-1670582068052-9150edc58ce5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmYXNoaW9uJTIwd2Vic2l0ZXxlbnwwfHx8fDE3NjEyMTk4NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion website"
+    },
+    {
+      "id": "project-influencer",
+      "description": "Influencer Portfolio Website",
+      "imageUrl": "https://picsum.photos/seed/influencer/600/400",
+      "imageHint": "influencer portfolio"
     }
   ]
 }
