@@ -4,12 +4,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CheckCircle2, Zap, CodeXml, Milestone, ShieldCheck, PlayCircle, BadgeCheck } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Zap, CodeXml, Milestone, ShieldCheck, PlayCircle, BadgeCheck, User } from 'lucide-react';
 import Particles from '@/components/particles';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { useAnimation } from '@/hooks/use-animation';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
 
 const websitePlans = [
     {
@@ -46,49 +48,6 @@ const websitePlans = [
     }
 ];
 
-const automationPlans = [
-    {
-        title: "WhatsApp Automation",
-        price: "₹4,000 / month",
-        tagline: "Coaching centers, restaurants, aur service providers jo 24/7 leads capture karna chahte hain.",
-        features: [
-            "Advanced WhatsApp Bot",
-            "24/7 Lead Capture (Name, Phone, Query)",
-            "Automated Welcome Messages",
-            "Leads ko Google Sheet mein save karna",
-            "Monitoring & Support",
-            "No Setup Fee"
-        ],
-        ctaText: "Start Your 7-Day Trial",
-        ctaLink: "/#contact",
-        isPrimary: false,
-    },
-    {
-        title: "Full Business Automation",
-        price: "₹9,000 / month",
-        tagline: "Poore business ko automate karne ke liye (WhatsApp, CRM, Internal Tasks).",
-        features: [
-            "Everything in 'WhatsApp' PLUS:",
-            "Custom n8n Workflows",
-            "CRM ke saath Gehra Integration",
-            "Automated Appointment Booking",
-            "Internal Task Automation (e.g., Reporting)",
-            "Priority Support",
-            "No Setup Fee"
-        ],
-        ctaText: "Start Your 7-Day Trial",
-        ctaLink: "/#contact",
-        isPrimary: true,
-    }
-];
-
-const processSteps = [
-    { icon: Milestone, title: "Step 1: Consultation (Free)", description: "Hum 1-on-1 call par aapki zaroorat ko samjhenge. (Bilkul free)." },
-    { icon: ShieldCheck, title: "Step 2: Start Project (Booking Amount)", description: "Project start karne ke liye, aapko ek chhota, non-refundable 'Booking Amount' (security amount) pay karna hoga. (Ye aapke pehle mahine ke bill ka hissa hoga). Yeh isliye taaki hum aapka project serious hoke shuru kar sakein aur humara initial time/resource secure ho." },
-    { icon: PlayCircle, title: "Step 3: 7-Day Trial/Review", description: "Hum aapko service ka pehla version denge. Aapke paas use test karne ke liye poore 7 din honge. Agar aap khush hain, toh hi aage badhein." },
-    { icon: BadgeCheck, title: "Step 4: Continue Service", description: "Trial pasand aane par, aap pehle mahine ka bacha hua payment karein, aur aapki service poori tarah live ho jayegi!" },
-];
-
 const faqs = [
     {
         question: "Setup Fee sach mein nahi hai? Koi hidden charge toh nahi?",
@@ -102,6 +61,13 @@ const faqs = [
         question: "Agar 7-day trial pasand nahi aaya toh?",
         answer: "Aap aage continue na karne ke liye bilkul free hain. Is case mein, aapka non-refundable booking amount humare initial setup time aur resources ko cover karega. Isse dono parties ke liye process fair rehta hai."
     }
+];
+
+const processSteps = [
+    { icon: Milestone, title: "Step 1: Consultation (Free)", description: "Hum 1-on-1 call par aapki zaroorat ko samjhenge. (Bilkul free)." },
+    { icon: ShieldCheck, title: "Step 2: Start Project (Booking Amount)", description: "Project start karne ke liye, aapko ek chhota, non-refundable 'Booking Amount' (security amount) pay karna hoga. (Ye aapke pehle mahine ke bill ka hissa hoga). Yeh isliye taaki hum aapka project serious hoke shuru kar sakein aur humara initial time/resource secure ho." },
+    { icon: PlayCircle, title: "Step 3: 7-Day Trial/Review", description: "Hum aapko service ka pehla version denge. Aapke paas use test karne ke liye poore 7 din honge. Agar aap khush hain, toh hi aage badhein." },
+    { icon: BadgeCheck, title: "Step 4: Continue Service", description: "Trial pasand aane par, aap pehle mahine ka bacha hua payment karein, aur aapki service poori tarah live ho jayegi!" },
 ];
 
 
@@ -182,38 +148,136 @@ export default function PricingPage() {
                         </div>
                         <h2 className="text-3xl font-bold text-glow-accent">Apne Business Ko Automatic Banayein, Bina Badi Investment Ke.</h2>
                         <p className="text-muted-foreground mt-2 max-w-3xl mx-auto">
-                           Manual kaam (jaise leads ko reply karna) mein time waste mat karo. Ab Bhopal mein bhi affordable AI Automation. Koi setup fee nahi, bas monthly plan chunein.
+                           Aap chahe ek professional hon, chhota business chala rahe hon, ya ek badi company, humare paas aapke liye sahi automation plan hai. Bina setup fee ke, chhota sa monthly subscription chunein.
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {automationPlans.map((plan) => (
-                            <Card key={plan.title} className={cn("glassmorphism flex flex-col", plan.isPrimary && "border-accent glow-shadow-accent")}>
-                                <CardHeader>
-                                    <CardTitle>{plan.title}</CardTitle>
-                                    <CardDescription>{plan.tagline}</CardDescription>
-                                </CardHeader>
-                                <CardContent className="flex-grow">
-                                    <div className="mb-6">
-                                        <span className="text-4xl font-bold">{plan.price}</span>
-                                        <p className="font-semibold text-accent">No Setup Fee</p>
-                                    </div>
-                                    <ul className="space-y-3">
-                                        {plan.features.map(feature => (
-                                            <li key={feature} className="flex items-center gap-3">
-                                                <CheckCircle2 className="h-5 w-5 text-accent" />
-                                                <span>{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
-                                <CardFooter>
-                                     <Button asChild className="w-full" variant={plan.isPrimary ? "default" : "outline"} style={plan.isPrimary ? {backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties : {}}>
-                                        <Link href={plan.ctaLink}>{plan.ctaText}</Link>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        ))}
-                    </div>
+
+                    <Tabs defaultValue="small-business" className="max-w-6xl mx-auto">
+                        <TabsList className="grid w-full grid-cols-3">
+                            <TabsTrigger value="individual">For Individuals</TabsTrigger>
+                            <TabsTrigger value="small-business">For Small Businesses</TabsTrigger>
+                            <TabsTrigger value="enterprise">For Enterprises</TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="individual" className="pt-8">
+                           <div className="max-w-md mx-auto">
+                                <h3 className="text-2xl font-bold text-center mb-4">Aapke Personal Tasks Ke Liye</h3>
+                               <Card className="glassmorphism flex flex-col border-accent glow-shadow-accent">
+                                    <CardHeader>
+                                        <CardTitle>Personal Productivity Plan</CardTitle>
+                                        <CardDescription>Working professionals, managers, aur freelancers ke liye jo apne daily tasks ko automate karna chahte hain.</CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow">
+                                        <div className="mb-6">
+                                            <span className="text-4xl font-bold">₹3,500 / month</span>
+                                            <p className="font-semibold text-accent">No Setup Fee</p>
+                                        </div>
+                                        <ul className="space-y-3 text-left">
+                                            {["Smart Email Automation", "Daily Task Automation", "Personal Calendar Management", "Personalized Reminder Bots"].map(feature => (
+                                                <li key={feature} className="flex items-center gap-3">
+                                                    <CheckCircle2 className="h-5 w-5 text-accent" />
+                                                    <span>{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </CardContent>
+                                    <CardFooter>
+                                        <Button asChild className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
+                                            <Link href="/#contact">Start Your 7-Day Trial</Link>
+                                        </Button>
+                                    </CardFooter>
+                                </Card>
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="small-business" className="pt-8">
+                             <div className="text-center mb-8">
+                                <h3 className="text-2xl font-bold">Aapke Local Business Ke Liye (Bhopal Special)</h3>
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <Card className="glassmorphism flex flex-col">
+                                    <CardHeader>
+                                        <CardTitle>WhatsApp Lead Gen</CardTitle>
+                                        <CardDescription>Coaching, restaurants, ya service providers ke liye 24/7 lead capture.</CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow">
+                                        <div className="mb-6">
+                                            <span className="text-4xl font-bold">₹4,000 / month</span>
+                                            <p className="font-semibold text-accent">No Setup Fee</p>
+                                        </div>
+                                        <ul className="space-y-3">
+                                            {["Advanced WhatsApp Bot", "24/7 Lead Capture (Name, Phone, Query)", "Automated Welcome Messages", "Leads ko Google Sheet mein save karna", "Monitoring & Support"].map(feature => (
+                                                <li key={feature} className="flex items-center gap-3">
+                                                    <CheckCircle2 className="h-5 w-5 text-accent" />
+                                                    <span>{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </CardContent>
+                                    <CardFooter>
+                                        <Button asChild className="w-full" variant="outline">
+                                            <Link href="/#contact">Start Your 7-Day Trial</Link>
+                                        </Button>
+                                    </CardFooter>
+                                </Card>
+                                <Card className="glassmorphism flex flex-col border-accent glow-shadow-accent">
+                                     <CardHeader>
+                                        <CardTitle>Full Business Automation</CardTitle>
+                                        <CardDescription>Poore business ko streamline karne ke liye (WhatsApp + CRM + Internal Tasks).</CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow">
+                                        <div className="mb-6">
+                                            <span className="text-4xl font-bold">₹9,000 / month</span>
+                                            <p className="font-semibold text-accent">No Setup Fee</p>
+                                        </div>
+                                        <ul className="space-y-3">
+                                            {["Everything in 'WhatsApp Lead Gen' PLUS:", "Custom n8n Workflows", "CRM ke saath Gehra Integration", "Automated Appointment Booking", "Internal Task Automation (e.g., Reporting)", "Priority Support"].map(feature => (
+                                                <li key={feature} className="flex items-center gap-3">
+                                                    <CheckCircle2 className="h-5 w-5 text-accent" />
+                                                    <span>{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </CardContent>
+                                    <CardFooter>
+                                        <Button asChild className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
+                                            <Link href="/#contact">Start Your 7-Day Trial</Link>
+                                        </Button>
+                                    </CardFooter>
+                                </Card>
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="enterprise" className="pt-8">
+                            <div className="max-w-md mx-auto">
+                                 <h3 className="text-2xl font-bold text-center mb-4">Aapke Bade Operations Ke Liye</h3>
+                                <Card className="glassmorphism flex flex-col">
+                                    <CardHeader>
+                                        <CardTitle>Enterprise Custom Solution</CardTitle>
+                                        <CardDescription>Badi companies jinko high-volume, complex automation ki zaroorat hai (jaise Hiring, Support, Finance).</CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow">
+                                        <div className="mb-6">
+                                            <span className="text-4xl font-bold">Custom Monthly Pricing</span>
+                                        </div>
+                                        <ul className="space-y-3 text-left">
+                                            {[ "Hiring Automation (Application scanning, interview scheduling)", "Advanced Customer Support (Multi-platform AI bots)", "Finance Automation (Invoicing, payment reminders)", "Full API & Internal Database Integration"].map(feature => (
+                                                <li key={feature} className="flex items-center gap-3">
+                                                    <CheckCircle2 className="h-5 w-5 text-accent" />
+                                                    <span>{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <div className="mt-6 text-sm text-muted-foreground p-3 bg-card rounded-md border border-border">
+                                            <strong>Important Note:</strong> Enterprise-level projects ki complexity ke kaaran, inme 'No Setup Fee' policy laagu nahi hoti. Project ke scope ke aadhaar par ek custom setup fee aur 'Booking Amount' laagu hogi.
+                                        </div>
+                                    </CardContent>
+                                    <CardFooter>
+                                        <Button asChild className="w-full" variant="secondary">
+                                            <Link href="/#contact">Book an Enterprise Audit</Link>
+                                        </Button>
+                                    </CardFooter>
+                                </Card>
+                            </div>
+                        </TabsContent>
+                    </Tabs>
                 </section>
                 
                 {/* Fair Start Process Section */}
@@ -256,4 +320,5 @@ export default function PricingPage() {
             </div>
         </div>
     );
-}
+
+    
