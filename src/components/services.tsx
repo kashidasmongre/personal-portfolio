@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Laptop, Rocket, Workflow, Building2, Bot, User, CheckCircle } from 'lucide-react';
@@ -209,3 +210,5 @@ const AutomationServiceCard = ({ icon: Icon, title, subtitle, description, benef
 
 
 export default Services;
+
+    
