@@ -124,9 +124,11 @@ export default function PricingPage() {
                                     </ul>
                                 </CardContent>
                                 <CardFooter>
-                                    <Button asChild className="w-full" variant={plan.isPrimary ? "default" : "outline"}>
-                                        <Link href={plan.ctaLink}>{plan.ctaText}</Link>
-                                    </Button>
+                                    <Link href={plan.ctaLink} className="w-full">
+                                        <Button className="w-full" variant={plan.isPrimary ? "default" : "outline"}>
+                                            {plan.ctaText}
+                                        </Button>
+                                    </Link>
                                 </CardFooter>
                             </Card>
                         ))}
@@ -134,9 +136,9 @@ export default function PricingPage() {
                      <div className="mt-12 text-center glassmorphism max-w-2xl mx-auto p-6 rounded-lg">
                         <h3 className="text-xl font-semibold">Ya, Ek Baar Mein Banwayein</h3>
                         <p className="text-muted-foreground mt-2 mb-4">Agar aap subscription nahi chahte, toh aap ₹20,000 (starting) ki one-time fee mein bhi website banwa sakte hain. (Hosting aur maintenance alag se lagega).</p>
-                        <Button asChild variant="secondary">
-                            <Link href="/#contact">Get a One-Time Quote</Link>
-                        </Button>
+                        <Link href="/#contact">
+                            <Button variant="secondary">Get a One-Time Quote</Button>
+                        </Link>
                     </div>
                 </section>
 
@@ -181,9 +183,11 @@ export default function PricingPage() {
                                         </ul>
                                     </CardContent>
                                     <CardFooter>
-                                        <Button asChild className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
-                                            <Link href="/#contact">Start Your 7-Day Trial</Link>
-                                        </Button>
+                                        <Link href="/#contact" className="w-full">
+                                            <Button className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
+                                                Start Your 7-Day Trial
+                                            </Button>
+                                        </Link>
                                     </CardFooter>
                                 </Card>
                             </div>
@@ -213,9 +217,11 @@ export default function PricingPage() {
                                         </ul>
                                     </CardContent>
                                     <CardFooter>
-                                        <Button asChild className="w-full" variant="outline">
-                                            <Link href="/#contact">Start Your 7-Day Trial</Link>
-                                        </Button>
+                                        <Link href="/#contact" className="w-full">
+                                            <Button className="w-full" variant="outline">
+                                                Start Your 7-Day Trial
+                                            </Button>
+                                        </Link>
                                     </CardFooter>
                                 </Card>
                                 <Card className="glassmorphism flex flex-col border-accent glow-shadow-accent">
@@ -238,9 +244,11 @@ export default function PricingPage() {
                                         </ul>
                                     </CardContent>
                                     <CardFooter>
-                                        <Button asChild className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
-                                            <Link href="/#contact">Start Your 7-Day Trial</Link>
-                                        </Button>
+                                        <Link href="/#contact" className="w-full">
+                                            <Button className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
+                                                Start Your 7-Day Trial
+                                            </Button>
+                                        </Link>
                                     </CardFooter>
                                 </Card>
                             </div>
@@ -270,9 +278,11 @@ export default function PricingPage() {
                                         </div>
                                     </CardContent>
                                     <CardFooter>
-                                        <Button asChild className="w-full" variant="secondary">
-                                            <Link href="/#contact">Book an Enterprise Audit</Link>
-                                        </Button>
+                                        <Link href="/#contact" className="w-full">
+                                            <Button className="w-full" variant="secondary">
+                                                Book an Enterprise Audit
+                                            </Button>
+                                        </Link>
                                     </CardFooter>
                                 </Card>
                             </div>

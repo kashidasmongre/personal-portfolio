@@ -1,3 +1,4 @@
+
 "use client";
 import React from 'react';
 import Link from 'next/link';
@@ -80,11 +81,11 @@ const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             Let's discuss how I can help your business thrive online. Get in touch for a free consultation.
           </p>
-          <Button asChild size="lg">
-            <Link href="/#contact">
+          <Link href="/#contact">
+            <Button size="lg">
               Contact Me
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

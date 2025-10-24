@@ -50,25 +50,25 @@ const Contact = () => {
           )}
         >
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" className="w-full sm:w-auto bg-green-500 hover:bg-green-600">
-              <Link href="https://wa.me/918305105008" target="_blank">
+            <a href="https://wa.me/918305105008" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full bg-green-500 hover:bg-green-600">
                 <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
-              </Link>
-            </Button>
+              </Button>
+            </a>
           </div>
           <div className="mt-8 flex justify-center gap-6">
-            <Link href="https://www.linkedin.com/in/kashi-das-mongre-9495b121a" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/kashi-das-mongre-9495b121a" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
-            </Link>
-            <Link href="https://x.com/KashiDasMongre" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            </a>
+            <a href="https://x.com/KashiDasMongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Twitter className="h-6 w-6" />
               <span className="sr-only">X</span>
-            </Link>
-            <Link href="https://github.com/kashidasmongre" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            </a>
+            <a href="https://github.com/kashidasmongre" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
