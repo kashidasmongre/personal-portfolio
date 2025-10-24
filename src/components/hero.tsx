@@ -8,10 +8,16 @@ import { AnimatedText } from './ui-elements/animated-text';
 import { useAnimation } from '@/hooks/use-animation';
 import { cn } from '@/lib/utils';
 import { MoveRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const profileImage = PlaceHolderImages.find(p => p.id === 'kashi-profile');
   const { ref: sectionRef, isVisible } = useAnimation(0.3);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleScrollTo = (selector: string) => {
     document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
@@ -22,7 +28,7 @@ const Hero = () => {
       <div className="container z-10 grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
         <div className={cn('space-y-6 text-center md:text-left transition-all duration-1000', isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10')}>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-             <AnimatedText text="Web Developer & AI Automation Expert" />
+             {isClient ? <AnimatedText text="Web Developer & AI Automation Expert" /> : 'Web Developer & AI Automation Expert'}
             <span className="block text-2xl sm:text-3xl lg:text-4xl text-primary mt-2">Kashidas Mongre</span>
           </h1>
           <p className={cn("text-lg text-primary sm:text-xl transition-opacity duration-1000 delay-500", isVisible ? 'opacity-100' : 'opacity-0')}>
@@ -45,7 +51,7 @@ const Hero = () => {
           {profileImage && (
             <Image
               src={profileImage.imageUrl}
-              alt="Kashidas Mongre - Web Developer Portfolio"
+              alt="Kashidas Mongre - Web Developer & AI Automation Expert in Bhopal"
               width={800}
               height={800}
               data-ai-hint={profileImage.imageHint}
