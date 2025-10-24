@@ -17,13 +17,7 @@ const services = [
     icon: BrainCircuit,
     title: 'AI & Automation',
     description: 'Custom AI solutions, chatbots, and business process automation to enhance efficiency.',
-    href: '/tech-support'
-  },
-  {
-    icon: Bot,
-    title: 'Tech & Tools Support',
-    description: 'Automation of business tasks, data management & reporting, CRM setup.',
-    href: '/tech-support'
+    href: '/ai-automation'
   },
 ];
 
@@ -41,7 +35,7 @@ const Services = () => {
             As a freelance web developer in Bhopal, I provide smart and efficient tech and consulting solutions that help businesses grow.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {services.map((service, index) => (
             <Link
               href={service.href}
