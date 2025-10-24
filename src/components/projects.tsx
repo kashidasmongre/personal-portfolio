@@ -62,6 +62,16 @@ const projects: Project[] = [
     hint: 'influencer portfolio',
     altText: 'Portfolio website for an influencer.'
   },
+  {
+    id: 'project-adwelink',
+    title: 'Adwelink Digital Services',
+    description: 'A professional website for a digital services agency, showcasing their offerings and expertise.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    liveLink: 'https://adwelink-digital-services-rho.vercel.app/',
+    image: PlaceHolderImages.find(p => p.id === 'project-adwelink'),
+    hint: 'digital agency',
+    altText: 'Website for Adwelink Digital Services.'
+  },
 ];
 
 const Projects = () => {
