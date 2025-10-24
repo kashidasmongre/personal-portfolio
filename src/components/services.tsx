@@ -58,9 +58,11 @@ const Services = () => {
                 />
             </div>
             <div className="mt-12 text-center">
-                <Button asChild size="lg">
-                    <Link href="/pricing">Website Plans Ki Pricing Dekhein</Link>
-                </Button>
+                <Link href="/pricing" passHref>
+                    <Button asChild size="lg">
+                        <a>Website Plans Ki Pricing Dekhein</a>
+                    </Button>
+                </Link>
             </div>
         </div>
 
@@ -114,12 +116,16 @@ const Services = () => {
                 />
             </div>
             <div className="mt-12 text-center flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
-                    <Link href="/pricing#automation-pricing">Automation Plans Ki Pricing Dekhein</Link>
-                </Button>
-                 <Button asChild size="lg" variant="outline">
-                    <Link href="/#contact">Book Your FREE Automation Audit</Link>
-                </Button>
+                 <Link href="/pricing#automation-pricing" passHref>
+                    <Button asChild size="lg" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
+                       <a>Automation Plans Ki Pricing Dekhein</a>
+                    </Button>
+                </Link>
+                 <Link href="/#contact" passHref>
+                    <Button asChild size="lg" variant="outline">
+                       <a>Book Your FREE Automation Audit</a>
+                    </Button>
+                </Link>
             </div>
         </div>
 
@@ -210,5 +216,3 @@ const AutomationServiceCard = ({ icon: Icon, title, subtitle, description, benef
 
 
 export default Services;
-
-    
