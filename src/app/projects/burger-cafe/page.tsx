@@ -1,6 +1,6 @@
 
 "use client";
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -52,6 +52,23 @@ export default function BurgerCafePage() {
   const { toast } = useToast();
   const { ref: heroRef, isVisible: heroIsVisible } = useAnimation(0.3);
 
+  useEffect(() => {
+    const header = document.getElementById('main-header');
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        header?.classList.add('bg-gray-900/80', 'backdrop-blur-lg', 'shadow-lg');
+        header?.classList.remove('py-6');
+        header?.classList.add('py-4');
+      } else {
+        header?.classList.remove('bg-gray-900/80', 'backdrop-blur-lg', 'shadow-lg');
+        header?.classList.add('py-6');
+        header?.classList.remove('py-4');
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleFormSubmit = (e: React.FormEvent, title: string, description: string) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -74,9 +91,9 @@ export default function BurgerCafePage() {
             <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" /> Back to Portfolio
           </Button>
         </Link>
-        <header className="fixed top-0 left-0 right-0 z-40 p-6 transition-all duration-300" id="main-header">
+        <header className="fixed top-0 left-0 right-0 z-40 py-6 transition-all duration-300" id="main-header">
             <div className="container mx-auto flex justify-between items-center">
-                <a href="#home" onClick={handleScrollTo('#home')} className="text-3xl font-extrabold text-glow-accent">The Burger Joint</a>
+                <a href="#home" onClick={handleScrollTo('#home')} className="text-3xl font-extrabold text-white" style={{ textShadow: '0 0 10px hsl(var(--accent))' }}>The Burger Joint</a>
                  <nav className="hidden md:flex gap-6 text-lg">
                     <a href="#about" onClick={handleScrollTo('#about')} className="hover:text-yellow-400 transition-colors">About</a>
                     <a href="#menu" onClick={handleScrollTo('#menu')} className="hover:text-yellow-400 transition-colors">Menu</a>
