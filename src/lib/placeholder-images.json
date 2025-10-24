@@ -21,31 +21,31 @@
     {
       "id": "project-electrician",
       "description": "Website for a local electrician",
-      "imageUrl": "https://images.unsplash.com/photo-1467733238130-bb6846885316?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbGVjdHJpY2lhbiUyMHdlYnNpdGV8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1467733238130-bb6846885316?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbGVjdHJpY2lhbiUyMHdlYnNpdGV8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "electrician website"
     },
     {
       "id": "project-inventory",
       "description": "Inventory management system dashboard",
-      "imageUrl": "https://images.unsplash.com/photo-1667053310801-d83094493eb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpbnZlbnRvcnklMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1667053310801-d83094493eb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpbnZlbnRvcnklMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "inventory dashboard"
     },
     {
       "id": "project-support-ticket",
       "description": "Customer support ticketing system",
-      "imageUrl": "https://images.unsplash.com/photo-1560264418-c4445382edbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjdXN0b21lciUyMHN1cHBvcnR8ZW58MHx8fHwxNzU4ODAwMjAyfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1560264418-c4445382edbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjdXN0b21lciUyMHN1cHBvcnR8ZW58MHx8fHwxNzU4ODAwMjAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "customer support"
     },
     {
       "id": "project-payment-qr",
       "description": "Dynamic QR code payment generator",
-      "imageUrl": "https://images.unsplash.com/photo-1581250601918-6138c3769148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxxciUyMHBheW1lbnR8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581250601918-6138c3769148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxxciUyMHBheW1lbnR8ZW58MHx8fHwxNzU4ODE1MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "qr payment"
     },
     {
       "id": "project-local-store",
       "description": "Branding for a local store",
-      "imageUrl": "https://images.unsplash.com/photo-1641209678164-a2eb4b565f60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsb2NhbCUyMHN0b3JlfGVufDB8fHx8MTc1ODcxMjI4NHww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1641209678164-a2eb4b565f60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsb2NhbCUyMHN0b3JlfGVufDB8fHx8MTc1ODcxMjI4NHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "local store"
     },
     {
@@ -69,7 +69,7 @@
     {
       "id": "project-influencer",
       "description": "Influencer Portfolio Website",
-      "imageUrl": "https://picsum.photos/seed/influencer/600/400",
+      "imageUrl": "https://ruqtxdl2vrxue2xu.public.blob.vercel-storage.com/Screenshot%202025-10-24%20195053.png",
       "imageHint": "influencer portfolio"
     }
   ]
