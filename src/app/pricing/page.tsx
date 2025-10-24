@@ -136,8 +136,10 @@ export default function PricingPage() {
                      <div className="mt-12 text-center glassmorphism max-w-2xl mx-auto p-6 rounded-lg">
                         <h3 className="text-xl font-semibold">Ya, Ek Baar Mein Banwayein</h3>
                         <p className="text-muted-foreground mt-2 mb-4">Agar aap subscription nahi chahte, toh aap ₹20,000 (starting) ki one-time fee mein bhi website banwa sakte hain. (Hosting aur maintenance alag se lagega).</p>
-                        <Link href="/#contact">
-                            <Button variant="secondary">Get a One-Time Quote</Button>
+                        <Link href="/#contact" passHref>
+                          <Button asChild variant="secondary">
+                            <a>Get a One-Time Quote</a>
+                          </Button>
                         </Link>
                     </div>
                 </section>
@@ -278,10 +280,10 @@ export default function PricingPage() {
                                         </div>
                                     </CardContent>
                                     <CardFooter>
-                                        <Link href="/#contact" className="w-full">
-                                            <Button className="w-full" variant="secondary">
-                                                Book an Enterprise Audit
-                                            </Button>
+                                        <Link href="/#contact" className="w-full" passHref>
+                                          <Button asChild className="w-full" variant="secondary">
+                                            <a>Book an Enterprise Audit</a>
+                                          </Button>
                                         </Link>
                                     </CardFooter>
                                 </Card>
@@ -331,3 +333,5 @@ export default function PricingPage() {
         </div>
     );
 }
+
+    
