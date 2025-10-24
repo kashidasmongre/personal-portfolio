@@ -4,7 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CheckCircle2, Bot, CodeXml, Zap } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Bot, CodeXml, Zap, User } from 'lucide-react';
 import Particles from '@/components/particles';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -81,6 +81,25 @@ const automationPlans = [
     }
 ];
 
+const professionalsPlan = {
+    title: "The Professional's Hub",
+    tagline: "For freelancers, consultants, and professionals who want to attract high-value clients or dream job offers.",
+    monthlyPrice: "Starts at ₹4,000 / month",
+    monthlyPriceDetail: "Includes hosting, maintenance, and support.",
+    oneTimePrice: "Starts at ₹30,000",
+    oneTimePriceDetail: "One-Time Fee. You own the site completely. Optional maintenance plans available.",
+    features: [
+        "Premium Portfolio Website (Skills, Projects, Testimonials)",
+        "Automated 'Hire Me' Funnel with inquiry filtering",
+        "Smart Appointment Booking (Calendly Integration)",
+        "'Authority' Blog Setup to share your expertise",
+        "Personalized Analytics to track visitor engagement",
+        "Optional: Automated content sharing to LinkedIn/X",
+    ],
+    ctaText: "Build My Personal Brand",
+    ctaLink: "/#contact"
+};
+
 const faqs = [
     {
         question: "Why are Website and Automation services priced separately?",
@@ -97,6 +116,17 @@ const faqs = [
     {
         question: "What tools do you use?",
         answer: "I use a modern, flexible stack of powerful tools including n8n, Make.com, the WhatsApp Business API, various AI models from providers like OpenAI, and other platforms to create the most effective and scalable solutions for your specific needs."
+    }
+];
+
+const professionalFaqs = [
+    {
+        question: "How is this different from the 'Business Website' plan?",
+        answer: "The 'Professional's Hub' is more than a website; it's a personal brand engine. It includes features specifically for individuals, like an automated 'Hire Me' funnel and appointment booking integration, designed to generate opportunities for you, not just showcase a company."
+    },
+    {
+        question: "I am a job-seeker, not a freelancer. How will this help me?",
+        answer: "In a competitive job market, a professional website makes you stand out to recruiters. It allows you to showcase your projects and skills in detail, far beyond a one-page resume. The automated booking system makes it effortless for hiring managers to schedule an interview, giving you a serious advantage."
     }
 ]
 
@@ -217,10 +247,84 @@ export default function PricingPage() {
                     </div>
                 </section>
 
+                {/* Personal Brand Accelerator Section */}
+                <section id="personal-brand-pricing" className="mb-24">
+                    <div className="text-center mb-12">
+                        <div className="inline-block bg-primary/10 p-3 rounded-full mb-4">
+                            <User className="h-8 w-8 text-primary" />
+                        </div>
+                        <h2 className="text-3xl font-bold">For Individuals: Build Your Brand, Not Just a Resume.</h2>
+                        <p className="text-muted-foreground mt-2 max-w-3xl mx-auto">
+                            In today's market, a static resume isn't enough. You need a dynamic online hub that showcases your expertise, filters opportunities, and works for you 24/7.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+                        <Card className="lg:col-span-3 glassmorphism flex flex-col border-primary glow-shadow-primary">
+                             <CardHeader>
+                                <CardTitle>{professionalsPlan.title}</CardTitle>
+                                <CardDescription>{professionalsPlan.tagline}</CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <ul className="space-y-3">
+                                    {professionalsPlan.features.map(feature => (
+                                        <li key={feature} className="flex items-center gap-3">
+                                            <CheckCircle2 className="h-5 w-5 text-primary" />
+                                            <span>{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </CardContent>
+                        </Card>
+                        <div className="lg:col-span-2 space-y-8">
+                             <Card className="glassmorphism flex flex-col h-full">
+                                <CardHeader>
+                                    <CardTitle>Monthly Plan</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                    <p className="text-3xl font-bold">{professionalsPlan.monthlyPrice}</p>
+                                    <p className="text-muted-foreground">{professionalsPlan.monthlyPriceDetail}</p>
+                                </CardContent>
+                                <CardFooter>
+                                    <Button asChild className="w-full">
+                                        <Link href={professionalsPlan.ctaLink}>Build My Personal Brand</Link>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                             <Card className="glassmorphism flex flex-col h-full">
+                                <CardHeader>
+                                    <CardTitle>One-Time Project</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                    <p className="text-3xl font-bold">{professionalsPlan.oneTimePrice}</p>
+                                    <p className="text-muted-foreground">{professionalsPlan.oneTimePriceDetail}</p>
+                                </CardContent>
+                                 <CardFooter>
+                                    <Button asChild className="w-full" variant="outline">
+                                        <Link href={professionalsPlan.ctaLink}>Book a Brand Strategy Call</Link>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                        </div>
+                    </div>
+                     <div className="max-w-3xl mx-auto mt-12">
+                        <Accordion type="single" collapsible className="w-full">
+                            {professionalFaqs.map((faq, index) => (
+                                <AccordionItem value={`item-prof-${index+1}`} key={index}>
+                                    <AccordionTrigger>{faq.question}</AccordionTrigger>
+                                    <AccordionContent>
+                                        {faq.answer}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ))}
+                        </Accordion>
+                    </div>
+                </section>
+
+
                 {/* FAQ Section */}
                 <section id="faq" className="max-w-3xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+                        <h2 className="text-3xl font-bold">Frequently Asked Questions (Business)</h2>
                     </div>
                     <Accordion type="single" collapsible className="w-full">
                         {faqs.map((faq, index) => (
@@ -238,3 +342,4 @@ export default function PricingPage() {
     );
 }
 
+    
