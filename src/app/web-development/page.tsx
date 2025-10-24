@@ -1,3 +1,4 @@
+
 "use client";
 import React from 'react';
 import ServicePageLayout from '@/components/service-page-layout';
@@ -30,7 +31,7 @@ export default function WebDevelopmentPage() {
   return (
     <>
       <ServicePageLayout
-        pageTitle="Web Development Services"
+        pageTitle="Website Development Services in Bhopal"
         pageDescription="Crafting digital solutions that empower small and medium-sized businesses in Bhopal and beyond."
         offerings={offerings}
         contactPrompt="Ready to Start Your Project?"

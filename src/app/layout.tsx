@@ -11,15 +11,15 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
-const title = "Kashidas Mongre - Web Developer & AI Expert in Bhopal";
-const description = "Professional Web Developer & AI Automation Expert in Bhopal. I build high-performance websites & AI-powered engines to help small businesses grow. 7-Day Trial.";
+const title = "Website & AI Automation Services in Bhopal | Kashidas Mongre";
+const description = "Web Developer in Bhopal offering affordable website subscriptions and AI/WhatsApp automation for local businesses. Get a 7-day free trial with no setup fee.";
 const url = "https://kashidasmongre.vercel.app"; 
 const faviconUrl = "https://ruqtxdl2vrxue2xu.public.blob.vercel-storage.com/Gemini_Generated_Image_q163gyq163gyq163.png";
 
 export const metadata: Metadata = {
   title: title,
   description: description,
-  keywords: ["web developer in Bhopal", "website design Bhopal", "AI automation services Bhopal", "freelance web developer Bhopal", "Next.js developer India", "React developer Bhopal", "AI chatbot developer India"],
+  keywords: ["web developer in Bhopal", "website design Bhopal", "AI automation services Bhopal", "freelance web developer Bhopal", "Next.js developer India", "React developer Bhopal", "AI chatbot developer India", "affordable website subscription India", "WhatsApp automation services Bhopal", "n8n automation expert"],
   authors: [{ name: 'Kashi Das Mongre', url: url }],
   metadataBase: new URL(url),
   icons: {
@@ -112,7 +112,7 @@ const structuredData = {
           "itemOffered": {
             "@type": "Service",
             "name": "Website Development Subscription",
-            "description": "Affordable monthly plans for custom website design, hosting, and maintenance with no setup fee."
+            "description": "Affordable monthly plans for custom website design, hosting, and maintenance with no setup fee for businesses in Bhopal."
           }
         },
         {
@@ -120,7 +120,7 @@ const structuredData = {
           "itemOffered": {
             "@type": "Service",
             "name": "AI & WhatsApp Automation",
-            "description": "Custom AI chatbots and WhatsApp automation to capture leads and streamline business processes 24/7."
+            "description": "Custom AI chatbots and WhatsApp automation to capture leads and streamline business processes 24/7 in Bhopal."
           }
         }
       ]

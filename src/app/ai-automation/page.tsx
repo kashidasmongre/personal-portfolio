@@ -1,3 +1,4 @@
+
 "use client";
 import React from 'react';
 import Link from 'next/link';
@@ -49,7 +50,7 @@ export default function AiAutomationPage() {
              <BrainCircuit className="h-10 w-10 text-primary" />
           </div>
           <h1 className={cn("text-4xl sm:text-5xl lg:text-6xl font-bold text-glow-primary transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
-            Stop Just 'Managing' Your Business. Start Automating It.
+            AI & WhatsApp Automation Services in Bhopal
           </h1>
           <p className={cn("mt-4 max-w-3xl mx-auto text-lg text-muted-foreground transition-opacity duration-700 delay-200", isVisible ? 'opacity-100' : 'opacity-0')}>
             Are you spending more time answering messages than running your business? I build automated "engines" that save you time, reduce costs, and capture every single lead, turning your manual tasks into automated success.

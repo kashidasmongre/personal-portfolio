@@ -22,11 +22,11 @@ const Hero = () => {
       <div className="container z-10 grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
         <div className={cn('space-y-6 text-center md:text-left transition-all duration-1000', isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10')}>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            <AnimatedText text="Web Developer & AI Automation Expert" />
+             <AnimatedText text="Web Developer & AI Automation Expert" />
             <span className="block text-2xl sm:text-3xl lg:text-4xl text-primary mt-2">Kashidas Mongre</span>
           </h1>
           <p className={cn("text-lg text-primary sm:text-xl transition-opacity duration-1000 delay-500", isVisible ? 'opacity-100' : 'opacity-0')}>
-            I build automated business engines that save time & capture leads.
+            I build automated business engines that save time & capture leads in Bhopal.
           </p>
           <p className={cn("max-w-md mx-auto md:mx-0 text-muted-foreground transition-opacity duration-1000 delay-700", isVisible ? 'opacity-100' : 'opacity-0')}>
             I help small businesses in Bhopal and beyond grow with digital and tech solutions. View my freelance web developer portfolio.

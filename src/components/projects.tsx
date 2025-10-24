@@ -18,6 +18,7 @@ export type Project = {
   liveLink: string;
   image?: ImagePlaceholder;
   hint?: string;
+  altText: string;
 };
 
 const projects: Project[] = [
@@ -28,7 +29,8 @@ const projects: Project[] = [
     technologies: ['Next.js', 'React', 'Tailwind CSS'],
     liveLink: 'https://thebakes.vercel.app/',
     image: PlaceHolderImages.find(p => p.id === 'project-the-bakes'),
-    hint: 'bakery website'
+    hint: 'bakery website',
+    altText: 'Responsive bakery website design for a local Bhopal client.'
   },
   {
     id: 'project-burger-cafe',
@@ -37,7 +39,8 @@ const projects: Project[] = [
     technologies: ['Next.js', 'React', 'Tailwind CSS'],
     liveLink: 'https://burger-landing-peag.vercel.app/',
     image: PlaceHolderImages.find(p => p.id === 'project-burger-cafe'),
-    hint: 'burger cafe'
+    hint: 'burger cafe',
+    altText: 'Custom website for a burger cafe in Bhopal with an online menu.'
   },
 ];
 
@@ -65,12 +68,12 @@ const Projects = () => {
                 className={cn('group block transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
                 style={{ transitionDelay: `${index * 200 + 300}ms` }}
               >
-                <Card className="glassmorphism h-full transform-gpu overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
+                <Card className="glassmorphism h-full transform-gpu overflow-hidden text-center transition-all duration-300 hover:border-primary hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
                   <CardHeader className="p-0 relative">
                     {image && (
                       <Image
                         src={image.imageUrl}
-                        alt={`${project.title} - Web Development Project by Kashidas Mongre`}
+                        alt={project.altText}
                         width={600}
                         height={400}
                         data-ai-hint={project.hint}
