@@ -59,9 +59,7 @@ const Services = () => {
             </div>
             <div className="mt-12 text-center">
                 <Link href="/pricing" passHref>
-                    <Button asChild size="lg">
-                        <a>Website Plans Ki Pricing Dekhein</a>
-                    </Button>
+                    <Button size="lg">Website Plans Ki Pricing Dekhein</Button>
                 </Link>
             </div>
         </div>
@@ -117,13 +115,13 @@ const Services = () => {
             </div>
             <div className="mt-12 text-center flex flex-col sm:flex-row gap-4 justify-center">
                  <Link href="/pricing#automation-pricing" passHref>
-                    <Button asChild size="lg" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
-                       <a>Automation Plans Ki Pricing Dekhein</a>
+                    <Button size="lg" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
+                       Automation Plans Ki Pricing Dekhein
                     </Button>
                 </Link>
                  <Link href="/#contact" passHref>
-                    <Button asChild size="lg" variant="outline">
-                       <a>Book Your FREE Automation Audit</a>
+                    <Button size="lg" variant="outline">
+                       Book Your FREE Automation Audit
                     </Button>
                 </Link>
             </div>
