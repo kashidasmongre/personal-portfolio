@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Laptop, Rocket, Workflow, Building2, Bot, User, CheckCircle } from 'lucide-react';
