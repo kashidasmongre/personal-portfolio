@@ -56,11 +56,6 @@ const Services = () => {
                     isVisible={isVisible}
                 />
             </div>
-            <div className="mt-12 text-center">
-                <Link href="/pricing" passHref>
-                    <Button size="lg">Website Plans Ki Pricing Dekhein</Button>
-                </Link>
-            </div>
         </div>
 
         <Separator className="my-24" />
@@ -111,18 +106,6 @@ const Services = () => {
                     index={2}
                     isVisible={isVisible}
                 />
-            </div>
-            <div className="mt-12 text-center flex flex-col sm:flex-row gap-4 justify-center">
-                 <Link href="/pricing#automation-pricing" passHref>
-                    <Button size="lg" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
-                       Automation Plans Ki Pricing Dekhein
-                    </Button>
-                </Link>
-                 <Link href="/#contact" passHref>
-                    <Button size="lg" variant="outline">
-                       Book Your FREE Automation Audit
-                    </Button>
-                </Link>
             </div>
         </div>
 
