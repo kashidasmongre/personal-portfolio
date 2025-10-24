@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/#about', label: 'About', isExternal: false },
   { href: '/ai-automation', label: 'AI & Automation', isExternal: false },
   { href: '/#services', label: 'Services', isExternal: false },
+  { href: '/pricing', label: 'Pricing', isExternal: false },
   { href: '/#projects', label: 'Portfolio', isExternal: false },
 ];
 
