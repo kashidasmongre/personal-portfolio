@@ -1,5 +1,7 @@
+
 "use client";
 
+import React from 'react';
 import { Laptop, Rocket, Workflow, Building2, Bot, User, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAnimation } from '@/hooks/use-animation';
@@ -30,7 +32,7 @@ const Services = () => {
                 <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Aaj ke zamaane mein, bina website ke business adhoora hai. Agar aapki koi online dukaan nahi hai ya aapki puraani website mobile par theek se nahi chalti, toh aap har din customers kho rahe hain.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <Link href="/pricing" className="block">
+                <Link href="/pricing" passHref>
                     <ServiceCard
                         icon={Laptop}
                         title="Website Subscription Plan (Tension-Free)"
@@ -45,7 +47,7 @@ const Services = () => {
                         isVisible={isVisible}
                     />
                 </Link>
-                <Link href="/pricing" className="block">
+                <Link href="/pricing" passHref>
                     <ServiceCard
                         icon={Rocket}
                         title="One-Time Website Project"
@@ -71,7 +73,7 @@ const Services = () => {
                 <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Kya aap apna poora din chhote-mote kaamo mein (jaise WhatsApp check karna, email ka jawab dena, ya data entry) mein bita dete hain? Automation se in kaamo ko auto-pilot par daalein.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Link href="/pricing#automation-pricing" className="block">
+                <Link href="/pricing#automation-pricing" passHref>
                     <AutomationServiceCard
                         icon={User}
                         title="For Professionals"
@@ -86,7 +88,7 @@ const Services = () => {
                         isVisible={isVisible}
                     />
                 </Link>
-                 <Link href="/pricing#automation-pricing" className="block">
+                 <Link href="/pricing#automation-pricing" passHref>
                     <AutomationServiceCard
                         icon={Bot}
                         title="For Small Businesses"
@@ -101,7 +103,7 @@ const Services = () => {
                         isVisible={isVisible}
                     />
                 </Link>
-                 <Link href="/pricing#automation-pricing" className="block">
+                 <Link href="/pricing#automation-pricing" passHref>
                     <AutomationServiceCard
                         icon={Building2}
                         title="For Large Businesses"
@@ -147,10 +149,12 @@ const processSteps = [
     { title: "Go Live & Support", description: "Khush hone par hi poora payment dein" },
 ];
 
-const ServiceCard = ({ icon: Icon, title, description, features, index, isVisible }: { icon: any, title: string, description: string, features: string[], index: number, isVisible: boolean }) => (
+const ServiceCard = React.forwardRef<HTMLDivElement, { icon: any, title: string, description: string, features: string[], index: number, isVisible: boolean }>(({ icon: Icon, title, description, features, index, isVisible, ...props }, ref) => (
     <div
-      className={cn('transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
+      ref={ref}
+      className={cn('h-full transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
       style={{ transitionDelay: `${index * 150 + 300}ms` }}
+      {...props}
     >
         <Card className="glassmorphism h-full transform-gpu overflow-hidden text-center transition-all duration-300 hover:border-primary hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
             <CardHeader className="items-center">
@@ -173,12 +177,16 @@ const ServiceCard = ({ icon: Icon, title, description, features, index, isVisibl
             </CardContent>
         </Card>
     </div>
-);
+));
+ServiceCard.displayName = 'ServiceCard';
 
-const AutomationServiceCard = ({ icon: Icon, title, subtitle, description, benefits, index, isVisible }: { icon: any, title: string, subtitle:string, description: string, benefits: string[], index: number, isVisible: boolean }) => (
+
+const AutomationServiceCard = React.forwardRef<HTMLDivElement, { icon: any, title: string, subtitle:string, description: string, benefits: string[], index: number, isVisible: boolean }>(({ icon: Icon, title, subtitle, description, benefits, index, isVisible, ...props }, ref) => (
      <div
-      className={cn('transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
+      ref={ref}
+      className={cn('h-full transition-all duration-700', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
       style={{ transitionDelay: `${index * 150 + 300}ms` }}
+      {...props}
     >
         <Card className="glassmorphism h-full transform-gpu overflow-hidden text-center transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2">
             <CardHeader className="items-center">
@@ -202,7 +210,9 @@ const AutomationServiceCard = ({ icon: Icon, title, subtitle, description, benef
             </CardContent>
         </Card>
     </div>
-);
-
+));
+AutomationServiceCard.displayName = 'AutomationServiceCard';
 
 export default Services;
+
+    

@@ -99,9 +99,9 @@ export default function AiAutomationPage() {
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             In a free 15-minute call, I'll identify the #1 automation opportunity that can save you 10+ hours a week.
           </p>
-          <Link href="/#contact">
-            <Button size="lg">
-             Get Your FREE Automation Audit
+          <Link href="/#contact" passHref>
+            <Button asChild size="lg">
+             <a>Get Your FREE Automation Audit</a>
             </Button>
           </Link>
         </div>

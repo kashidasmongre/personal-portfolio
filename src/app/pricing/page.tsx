@@ -124,10 +124,10 @@ export default function PricingPage() {
                                     </ul>
                                 </CardContent>
                                 <CardFooter>
-                                    <Link href={plan.ctaLink} className="w-full">
-                                        <Button className="w-full" variant={plan.isPrimary ? "default" : "outline"}>
-                                            {plan.ctaText}
-                                        </Button>
+                                    <Link href={plan.ctaLink} className="w-full" passHref>
+                                      <Button asChild className="w-full" variant={plan.isPrimary ? "default" : "outline"}>
+                                        <a>{plan.ctaText}</a>
+                                      </Button>
                                     </Link>
                                 </CardFooter>
                             </Card>
@@ -185,9 +185,9 @@ export default function PricingPage() {
                                         </ul>
                                     </CardContent>
                                     <CardFooter>
-                                        <Link href="/#contact" className="w-full">
-                                            <Button className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
-                                                Start Your 7-Day Trial
+                                        <Link href="/#contact" className="w-full" passHref>
+                                            <Button asChild className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
+                                                <a>Start Your 7-Day Trial</a>
                                             </Button>
                                         </Link>
                                     </CardFooter>
@@ -219,9 +219,9 @@ export default function PricingPage() {
                                         </ul>
                                     </CardContent>
                                     <CardFooter>
-                                        <Link href="/#contact" className="w-full">
-                                            <Button className="w-full" variant="outline">
-                                                Start Your 7-Day Trial
+                                        <Link href="/#contact" className="w-full" passHref>
+                                            <Button asChild className="w-full" variant="outline">
+                                                <a>Start Your 7-Day Trial</a>
                                             </Button>
                                         </Link>
                                     </CardFooter>
@@ -246,9 +246,9 @@ export default function PricingPage() {
                                         </ul>
                                     </CardContent>
                                     <CardFooter>
-                                        <Link href="/#contact" className="w-full">
-                                            <Button className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
-                                                Start Your 7-Day Trial
+                                        <Link href="/#contact" className="w-full" passHref>
+                                            <Button asChild className="w-full" style={{backgroundColor: 'hsl(var(--accent))', borderColor: 'hsl(var(--accent))'} as React.CSSProperties}>
+                                                <a>Start Your 7-Day Trial</a>
                                             </Button>
                                         </Link>
                                     </CardFooter>
@@ -333,5 +333,3 @@ export default function PricingPage() {
         </div>
     );
 }
-
-    

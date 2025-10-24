@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -5,18 +6,20 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '/#about', label: 'About', isExternal: false },
-  { href: '/ai-automation', label: 'AI & Automation', isExternal: false },
-  { href: '/#services', label: 'Services', isExternal: false },
-  { href: '/pricing', label: 'Pricing', isExternal: false },
-  { href: '/#projects', label: 'Portfolio', isExternal: false },
+  { href: '/#about', label: 'About' },
+  { href: '/ai-automation', label: 'AI & Automation' },
+  { href: '/#services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/#projects', label: 'Portfolio' },
 ];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,45 +29,45 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('/#')) {
-        e.preventDefault();
-        const targetId = href.substring(2);
-        
-        if (window.location.pathname !== '/') {
-            window.location.href = `/${href.substring(1)}`;
-        } else {
-            const targetElement = document.getElementById(targetId);
-            targetElement?.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+     e.preventDefault();
+     const targetId = href.split('#')[1];
+     if (targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
-    }
-    setIsMenuOpen(false);
+     } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+     }
+     setIsMenuOpen(false);
   };
   
-    const renderNavLink = (link: typeof navLinks[0], isMobile: boolean = false) => {
+  const renderNavLink = (link: typeof navLinks[0], isMobile: boolean = false) => {
     const className = isMobile 
       ? "w-full text-center text-lg font-medium text-foreground/80 transition-colors hover:text-primary"
       : "text-sm font-medium text-foreground/80 transition-colors hover:text-primary";
 
-    if (link.isExternal) {
-      return (
-        <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
-          {link.label}
-        </a>
-      );
-    }
-    
     if (link.href.startsWith('/#')) {
+        // If we are already on the homepage, use smooth scroll. Otherwise, use Link.
+        if (pathname === '/') {
+            return (
+                <a key={link.href} href={link.href} onClick={(e) => handleScrollTo(e, link.href)} className={className}>
+                    {link.label}
+                </a>
+            );
+        }
+        // If on another page, Link component will handle navigation to the homepage and then the browser will handle the hash.
         return (
-            <a key={link.href} href={link.href} onClick={(e) => handleLinkClick(e, link.href)} className={className}>
-                {link.label}
-            </a>
-        );
+            <Link key={link.href} href={link.href} passHref>
+               <span onClick={() => setIsMenuOpen(false)} className={className} style={{cursor: 'pointer'}}>{link.label}</span>
+            </Link>
+        )
     }
 
     return (
-      <Link key={link.href} href={link.href} onClick={() => setIsMenuOpen(false)} className={className}>
-        {link.label}
+      <Link key={link.href} href={link.href}>
+        <span onClick={() => setIsMenuOpen(false)} className={className} style={{cursor: 'pointer'}}>{link.label}</span>
       </Link>
     );
   };
@@ -78,14 +81,14 @@ const Header = () => {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="/#home" onClick={(e) => handleLinkClick(e, '/#home')} className="font-headline text-2xl font-bold text-glow-primary">
+        <a href="/#home" onClick={(e) => handleScrollTo(e, '/#home')} className="font-headline text-2xl font-bold text-glow-primary">
           KDM
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
              renderNavLink(link)
           ))}
-          <a href="/#contact" onClick={(e) => handleLinkClick(e, '/#contact')}>
+          <a href="/#contact" onClick={(e) => handleScrollTo(e, '/#contact')}>
             <Button size="sm">Hire Me</Button>
           </a>
         </nav>
@@ -106,7 +109,7 @@ const Header = () => {
           {navLinks.map((link) => (
             renderNavLink(link, true)
           ))}
-          <a href="/#contact" className='w-full' onClick={(e) => handleLinkClick(e, '/#contact')}>
+          <a href="/#contact" className='w-full' onClick={(e) => handleScrollTo(e, '/#contact')}>
             <Button className='w-full'>Hire Me</Button>
           </a>
         </nav>
