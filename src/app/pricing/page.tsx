@@ -4,7 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CheckCircle2, Bot, CodeXml, Zap, User } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Zap, CodeXml, Milestone, ShieldCheck, PlayCircle, BadgeCheck } from 'lucide-react';
 import Particles from '@/components/particles';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -13,35 +13,34 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 const websitePlans = [
     {
-        title: "Website as a Service",
-        price: "₹3,000 / month",
-        tagline: "The 'peace of mind' plan. Your complete website solution: design, hosting, and support for one low monthly fee.",
+        title: "Website Starter",
+        price: "₹2,999 / month",
+        tagline: "Local businesses, shops, aur professionals ke liye jo ek sundar online presence chahte hain.",
         features: [
-            "Custom, Modern Website Design",
-            "High-Speed Hosting Included",
-            "SSL Security Certificate",
-            "Monthly Maintenance & Security Backups",
-            "Basic Content Updates (text/images)",
-            "Mobile & Tablet Responsive"
+            "Professional 5-Page Website",
+            "High-Speed Hosting & SSL Included",
+            "Monthly Maintenance & Security",
+            "Basic Content Updates",
+            "Mobile Friendly Design",
+            "No Setup Fee"
         ],
-        ctaText: "Start Your Website Today",
+        ctaText: "Start Your 7-Day Trial",
         ctaLink: "/#contact",
         isPrimary: false,
     },
     {
-        title: "One-Time Website Project",
-        price: "Starts at ₹25,000",
-        priceDetail: "One-Time Fee",
-        tagline: "For those who want full ownership. A powerful, custom-built website that you own completely.",
+        title: "Business Pro + CRM",
+        price: "₹5,999 / month",
+        tagline: "Businesses jo sirf website nahi, balki leads manage karne ke liye ek poora system chahte hain.",
         features: [
-            "Full Custom Design & Development",
-            "You Get All Source Code",
-            "CMS Integration (e.g., WordPress/Headless)",
-            "Full SEO Setup",
-            "Training on How to Manage Your Site",
-            "30 Days of Free Support"
+            "Everything in 'Starter' PLUS:",
+            "Free Basic CRM Setup",
+            "Advanced, Multi-Page Website",
+            "Lead Generation Forms",
+            "Priority Support",
+            "No Setup Fee"
         ],
-        ctaText: "Get a Custom Quote",
+        ctaText: "Start Your 7-Day Trial",
         ctaLink: "/#contact",
         isPrimary: true,
     }
@@ -49,86 +48,62 @@ const websitePlans = [
 
 const automationPlans = [
     {
-        title: "Automation Starter",
-        setupFee: "Starts at ₹15,000",
-        retainer: "Starts at ₹5,000 / month",
-        tagline: "Perfect for automating one key process, like lead capture or basic support.",
+        title: "WhatsApp Automation",
+        price: "₹4,000 / month",
+        tagline: "Coaching centers, restaurants, aur service providers jo 24/7 leads capture karna chahte hain.",
         features: [
-            "Basic WhatsApp Bot (Greeting, Data Collection)",
-            "Website Contact Form to Google Sheet/CRM",
-            "Automated Email Acknowledgement",
-            "Basic Website FAQ Chatbot"
+            "Advanced WhatsApp Bot",
+            "24/7 Lead Capture (Name, Phone, Query)",
+            "Automated Welcome Messages",
+            "Leads ko Google Sheet mein save karna",
+            "Monitoring & Support",
+            "No Setup Fee"
         ],
-        ctaText: "Book a Consultation",
+        ctaText: "Start Your 7-Day Trial",
         ctaLink: "/#contact",
         isPrimary: false,
     },
     {
-        title: "Automation Elite",
-        setupFee: "Custom Quote (Starts at ₹40,000+)",
-        retainer: "Starts at ₹12,000 / month",
-        tagline: "For businesses ready for a fully integrated, AI-powered system that runs itself.",
+        title: "Full Business Automation",
+        price: "₹9,000 / month",
+        tagline: "Poore business ko automate karne ke liye (WhatsApp, CRM, Internal Tasks).",
         features: [
-            "Advanced AI-Powered WhatsApp Bot",
-            "Custom n8n/Make.com Workflows",
-            "Corporate Process Automation",
-            "Full Integration with Your Existing Software",
-            "Priority Support & Performance Monitoring"
+            "Everything in 'WhatsApp' PLUS:",
+            "Custom n8n Workflows",
+            "CRM ke saath Gehra Integration",
+            "Automated Appointment Booking",
+            "Internal Task Automation (e.g., Reporting)",
+            "Priority Support",
+            "No Setup Fee"
         ],
-        ctaText: "Book Your FREE Automation Audit",
+        ctaText: "Start Your 7-Day Trial",
         ctaLink: "/#contact",
         isPrimary: true,
     }
 ];
 
-const professionalsPlan = {
-    title: "The Professional's Hub",
-    tagline: "For freelancers, consultants, and professionals who want to attract high-value clients or dream job offers.",
-    monthlyPrice: "Starts at ₹4,000 / month",
-    monthlyPriceDetail: "Includes hosting, maintenance, and support.",
-    oneTimePrice: "Starts at ₹30,000",
-    oneTimePriceDetail: "One-Time Fee. You own the site completely. Optional maintenance plans available.",
-    features: [
-        "Premium Portfolio Website (Skills, Projects, Testimonials)",
-        "Automated 'Hire Me' Funnel with inquiry filtering",
-        "Smart Appointment Booking (Calendly Integration)",
-        "'Authority' Blog Setup to share your expertise",
-        "Personalized Analytics to track visitor engagement",
-        "Optional: Automated content sharing to LinkedIn/X",
-    ],
-    ctaText: "Build My Personal Brand",
-    ctaLink: "/#contact"
-};
+const processSteps = [
+    { icon: Milestone, title: "Step 1: Consultation (Free)", description: "Hum 1-on-1 call par aapki zaroorat ko samjhenge. (Bilkul free)." },
+    { icon: ShieldCheck, title: "Step 2: Start Project (Booking Amount)", description: "Project start karne ke liye, aapko ek chhota, non-refundable 'Booking Amount' (security amount) pay karna hoga. (Ye aapke pehle mahine ke bill ka hissa hoga). Yeh isliye taaki hum aapka project serious hoke shuru kar sakein aur humara initial time/resource secure ho." },
+    { icon: PlayCircle, title: "Step 3: 7-Day Trial/Review", description: "Hum aapko service ka pehla version denge. Aapke paas use test karne ke liye poore 7 din honge. Agar aap khush hain, toh hi aage badhein." },
+    { icon: BadgeCheck, title: "Step 4: Continue Service", description: "Trial pasand aane par, aap pehle mahine ka bacha hua payment karein, aur aapki service poori tarah live ho jayegi!" },
+];
 
 const faqs = [
     {
-        question: "Why are Website and Automation services priced separately?",
-        answer: "Website services build your online foundation and credibility, while AI & Automation services are an investment in operational efficiency that saves you time and money. Separating them allows you to choose exactly what you need and understand the value each provides."
+        question: "Setup Fee sach mein nahi hai? Koi hidden charge toh nahi?",
+        answer: "Bilkul nahi. Humare subscription plans mein koi hidden setup fee nahi hai. Aap bas monthly charge pay karte hain. Humara model transparency par based hai."
     },
     {
-        question: "What is included in the 'One-Time Setup Fee' for automation?",
-        answer: "The setup fee covers the expert work of designing, building, testing, and deploying your custom automation system. This is a one-time investment to create the robust 'engine' that will power your business processes."
+        question: "Security Amount (Booking Amount) kitna hai?",
+        answer: "Yeh aapke chune gaye plan par depend karta hai, usually yeh aapke pehle mahine ke bill ka 25% hota hai. Yeh ek chhota sa amount hai jo project shuru karne ke liye humare mutual commitment ko ensure karta hai."
     },
     {
-        question: "What does the monthly 'Automation Retainer' cover?",
-        answer: "The retainer covers all the ongoing costs to keep your system running smoothly 24/7. This includes third-party tool costs (like API access and server fees), continuous monitoring, regular maintenance, and dedicated support for any updates or issues."
-    },
-    {
-        question: "What tools do you use?",
-        answer: "I use a modern, flexible stack of powerful tools including n8n, Make.com, the WhatsApp Business API, various AI models from providers like OpenAI, and other platforms to create the most effective and scalable solutions for your specific needs."
+        question: "Agar 7-day trial pasand nahi aaya toh?",
+        answer: "Aap aage continue na karne ke liye bilkul free hain. Is case mein, aapka non-refundable booking amount humare initial setup time aur resources ko cover karega. Isse dono parties ke liye process fair rehta hai."
     }
 ];
 
-const professionalFaqs = [
-    {
-        question: "How is this different from the 'Business Website' plan?",
-        answer: "The 'Professional's Hub' is more than a website; it's a personal brand engine. It includes features specifically for individuals, like an automated 'Hire Me' funnel and appointment booking integration, designed to generate opportunities for you, not just showcase a company."
-    },
-    {
-        question: "I am a job-seeker, not a freelancer. How will this help me?",
-        answer: "In a competitive job market, a professional website makes you stand out to recruiters. It allows you to showcase your projects and skills in detail, far beyond a one-page resume. The automated booking system makes it effortless for hiring managers to schedule an interview, giving you a serious advantage."
-    }
-]
 
 export default function PricingPage() {
     const { ref, isVisible } = useAnimation(0.1);
@@ -145,7 +120,7 @@ export default function PricingPage() {
 
                 <div className="text-center pt-24 pb-12">
                     <h1 className={cn("text-4xl sm:text-5xl lg:text-6xl font-bold text-glow-primary transition-all duration-700", isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4')}>
-                        Pricing & Plans
+                        Pricing & Plans (For Bhopal)
                     </h1>
                     <p className={cn("mt-4 max-w-2xl mx-auto text-lg text-muted-foreground transition-opacity duration-700 delay-200", isVisible ? 'opacity-100' : 'opacity-0')}>
                         Transparent pricing for services that deliver real value to your business.
@@ -158,11 +133,11 @@ export default function PricingPage() {
                         <div className="inline-block bg-primary/10 p-3 rounded-full mb-4">
                             <CodeXml className="h-8 w-8 text-primary" />
                         </div>
-                        <h2 className="text-3xl font-bold">Your Professional Online Foundation</h2>
-                        <p className="text-muted-foreground mt-2">A professional website is the first step to building trust and credibility online.</p>
+                        <h2 className="text-3xl font-bold">Aapki Dukaan, Ab Online. Bina Bhaari Kharch.</h2>
+                        <p className="text-muted-foreground mt-2">Bhopal ke businesses ke liye special subscription plans. Koi setup fee nahi. Bas mahine ka chhota sa charge aur aapki website taiyaar.</p>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {websitePlans.map((plan, index) => (
+                        {websitePlans.map((plan) => (
                             <Card key={plan.title} className={cn("glassmorphism flex flex-col", plan.isPrimary && "border-primary glow-shadow-primary")}>
                                 <CardHeader>
                                     <CardTitle>{plan.title}</CardTitle>
@@ -171,7 +146,7 @@ export default function PricingPage() {
                                 <CardContent className="flex-grow">
                                     <div className="mb-6">
                                         <span className="text-4xl font-bold">{plan.price}</span>
-                                        {plan.priceDetail && <span className="text-muted-foreground"> {plan.priceDetail}</span>}
+                                        <p className="font-semibold text-primary">No Setup Fee</p>
                                     </div>
                                     <ul className="space-y-3">
                                         {plan.features.map(feature => (
@@ -190,6 +165,13 @@ export default function PricingPage() {
                             </Card>
                         ))}
                     </div>
+                     <div className="mt-12 text-center glassmorphism max-w-2xl mx-auto p-6 rounded-lg">
+                        <h3 className="text-xl font-semibold">Ya, Ek Baar Mein Banwayein</h3>
+                        <p className="text-muted-foreground mt-2 mb-4">Agar aap subscription nahi chahte, toh aap ₹20,000 (starting) ki one-time fee mein bhi website banwa sakte hain. (Hosting aur maintenance alag se lagega).</p>
+                        <Button asChild variant="secondary">
+                            <Link href="/#contact">Get a One-Time Quote</Link>
+                        </Button>
+                    </div>
                 </section>
 
                 {/* AI & Automation Services Section */}
@@ -198,9 +180,9 @@ export default function PricingPage() {
                         <div className="inline-block bg-accent/10 p-3 rounded-full mb-4">
                             <Zap className="h-8 w-8 text-accent" />
                         </div>
-                        <h2 className="text-3xl font-bold text-glow-accent">Stop Manual Work. Start Scaling with AI.</h2>
+                        <h2 className="text-3xl font-bold text-glow-accent">Apne Business Ko Automatic Banayein, Bina Badi Investment Ke.</h2>
                         <p className="text-muted-foreground mt-2 max-w-3xl mx-auto">
-                            Automation isn't a cost; it's an investment that saves time and money. Pricing is split into a one-time setup fee for building your custom system and a monthly retainer for ongoing costs, monitoring, and support.
+                           Manual kaam (jaise leads ko reply karna) mein time waste mat karo. Ab Bhopal mein bhi affordable AI Automation. Koi setup fee nahi, bas monthly plan chunein.
                         </p>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -211,15 +193,9 @@ export default function PricingPage() {
                                     <CardDescription>{plan.tagline}</CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-grow">
-                                    <div className="mb-6 space-y-2">
-                                        <div>
-                                            <p className="font-semibold text-lg">{plan.setupFee}</p>
-                                            <p className="text-sm text-muted-foreground">One-Time Setup Fee</p>
-                                        </div>
-                                        <div>
-                                            <p className="font-semibold text-lg">{plan.retainer}</p>
-                                            <p className="text-sm text-muted-foreground">Monthly Retainer</p>
-                                        </div>
+                                    <div className="mb-6">
+                                        <span className="text-4xl font-bold">{plan.price}</span>
+                                        <p className="font-semibold text-accent">No Setup Fee</p>
                                     </div>
                                     <ul className="space-y-3">
                                         {plan.features.map(feature => (
@@ -238,85 +214,25 @@ export default function PricingPage() {
                             </Card>
                         ))}
                     </div>
-                    <div className="mt-12 text-center glassmorphism max-w-2xl mx-auto p-6 rounded-lg">
-                        <h3 className="text-xl font-semibold">Need Just One Specific Bot?</h3>
-                        <p className="text-muted-foreground mt-2 mb-4">If you have a single, specific automation project (like one WhatsApp bot) and don't need a monthly retainer, I offer one-time project pricing. Note: You will be responsible for your own API and server costs.</p>
-                        <Button asChild variant="secondary">
-                            <Link href="/#contact">Get a Custom Bot Quote</Link>
-                        </Button>
-                    </div>
                 </section>
-
-                {/* Personal Brand Accelerator Section */}
-                <section id="personal-brand-pricing" className="mb-24">
+                
+                {/* Fair Start Process Section */}
+                <section id="process" className="mb-24">
                     <div className="text-center mb-12">
-                        <div className="inline-block bg-primary/10 p-3 rounded-full mb-4">
-                            <User className="h-8 w-8 text-primary" />
-                        </div>
-                        <h2 className="text-3xl font-bold">For Individuals: Build Your Brand, Not Just a Resume.</h2>
-                        <p className="text-muted-foreground mt-2 max-w-3xl mx-auto">
-                            In today's market, a static resume isn't enough. You need a dynamic online hub that showcases your expertise, filters opportunities, and works for you 24/7.
-                        </p>
+                        <h2 className="text-3xl font-bold">Humara 'Fair-Start' Process (Aapke Aur Humare Trust Ke Liye)</h2>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
-                        <Card className="lg:col-span-3 glassmorphism flex flex-col border-primary glow-shadow-primary">
-                             <CardHeader>
-                                <CardTitle>{professionalsPlan.title}</CardTitle>
-                                <CardDescription>{professionalsPlan.tagline}</CardDescription>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <ul className="space-y-3">
-                                    {professionalsPlan.features.map(feature => (
-                                        <li key={feature} className="flex items-center gap-3">
-                                            <CheckCircle2 className="h-5 w-5 text-primary" />
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </CardContent>
-                        </Card>
-                        <div className="lg:col-span-2 space-y-8">
-                             <Card className="glassmorphism flex flex-col h-full">
-                                <CardHeader>
-                                    <CardTitle>Monthly Plan</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-grow">
-                                    <p className="text-3xl font-bold">{professionalsPlan.monthlyPrice}</p>
-                                    <p className="text-muted-foreground">{professionalsPlan.monthlyPriceDetail}</p>
-                                </CardContent>
-                                <CardFooter>
-                                    <Button asChild className="w-full">
-                                        <Link href={professionalsPlan.ctaLink}>Build My Personal Brand</Link>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                             <Card className="glassmorphism flex flex-col h-full">
-                                <CardHeader>
-                                    <CardTitle>One-Time Project</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-grow">
-                                    <p className="text-3xl font-bold">{professionalsPlan.oneTimePrice}</p>
-                                    <p className="text-muted-foreground">{professionalsPlan.oneTimePriceDetail}</p>
-                                </CardContent>
-                                 <CardFooter>
-                                    <Button asChild className="w-full" variant="outline">
-                                        <Link href={professionalsPlan.ctaLink}>Book a Brand Strategy Call</Link>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        </div>
-                    </div>
-                     <div className="max-w-3xl mx-auto mt-12">
-                        <Accordion type="single" collapsible className="w-full">
-                            {professionalFaqs.map((faq, index) => (
-                                <AccordionItem value={`item-prof-${index+1}`} key={index}>
-                                    <AccordionTrigger>{faq.question}</AccordionTrigger>
-                                    <AccordionContent>
-                                        {faq.answer}
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
+                    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {processSteps.map((step, index) => (
+                            <div key={index} className="flex items-start gap-4">
+                                <div className="flex-shrink-0 h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <step.icon className="h-6 w-6 text-primary" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-semibold">{step.title}</h3>
+                                    <p className="text-muted-foreground mt-1">{step.description}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </section>
 
@@ -324,7 +240,7 @@ export default function PricingPage() {
                 {/* FAQ Section */}
                 <section id="faq" className="max-w-3xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold">Frequently Asked Questions (Business)</h2>
+                        <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
                     </div>
                     <Accordion type="single" collapsible className="w-full">
                         {faqs.map((faq, index) => (
@@ -341,5 +257,3 @@ export default function PricingPage() {
         </div>
     );
 }
-
-    
