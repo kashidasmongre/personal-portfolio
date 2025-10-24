@@ -30,31 +30,35 @@ const Services = () => {
                 <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Aaj ke zamaane mein, bina website ke business adhoora hai. Agar aapki koi online dukaan nahi hai ya aapki puraani website mobile par theek se nahi chalti, toh aap har din customers kho rahe hain.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <ServiceCard
-                    icon={Laptop}
-                    title="Website Subscription Plan (Tension-Free)"
-                    description="Yeh ek 'Website Rent' jaisa hai. Ek saath 25,000 kharch nahi karne. Bas mahine ka chhota sa subscription dein aur aapko ek shaandaar website, hosting, maintenance, sab kuch mil jayega."
-                    features={[
-                        "Aapke business se match karti sundar design.",
-                        "Website ko 24/7 online aur safe rakhne ki zimmedaari meri.",
-                        "Koi naya offer ya photo daalna hai? Main kar dunga.",
-                        "Aane waali har lead ko manage karne ke liye Free CRM system."
-                    ]}
-                    index={0}
-                    isVisible={isVisible}
-                />
-                <ServiceCard
-                    icon={Rocket}
-                    title="One-Time Website Project"
-                    description="Agar aap subscription nahi chahte aur website ka poora control (ownership) apne paas rakhna chahte hain, toh yeh plan aapke liye hai. Ek baar banwayein, poori website aapki."
-                    features={[
-                        "Website ka poora code aur files aapki.",
-                        "Aap khud bhi aasaani se content badal payenge.",
-                        "Poori tarah se Google-friendly banakar denge."
-                    ]}
-                    index={1}
-                    isVisible={isVisible}
-                />
+                <Link href="/pricing" className="block">
+                    <ServiceCard
+                        icon={Laptop}
+                        title="Website Subscription Plan (Tension-Free)"
+                        description="Yeh ek 'Website Rent' jaisa hai. Ek saath 25,000 kharch nahi karne. Bas mahine ka chhota sa subscription dein aur aapko ek shaandaar website, hosting, maintenance, sab kuch mil jayega."
+                        features={[
+                            "Aapke business se match karti sundar design.",
+                            "Website ko 24/7 online aur safe rakhne ki zimmedaari meri.",
+                            "Koi naya offer ya photo daalna hai? Main kar dunga.",
+                            "Aane waali har lead ko manage karne ke liye Free CRM system."
+                        ]}
+                        index={0}
+                        isVisible={isVisible}
+                    />
+                </Link>
+                <Link href="/pricing" className="block">
+                    <ServiceCard
+                        icon={Rocket}
+                        title="One-Time Website Project"
+                        description="Agar aap subscription nahi chahte aur website ka poora control (ownership) apne paas rakhna chahte hain, toh yeh plan aapke liye hai. Ek baar banwayein, poori website aapki."
+                        features={[
+                            "Website ka poora code aur files aapki.",
+                            "Aap khud bhi aasaani se content badal payenge.",
+                            "Poori tarah se Google-friendly banakar denge."
+                        ]}
+                        index={1}
+                        isVisible={isVisible}
+                    />
+                </Link>
             </div>
         </div>
 
@@ -67,45 +71,51 @@ const Services = () => {
                 <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Kya aap apna poora din chhote-mote kaamo mein (jaise WhatsApp check karna, email ka jawab dena, ya data entry) mein bita dete hain? Automation se in kaamo ko auto-pilot par daalein.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <AutomationServiceCard
-                    icon={User}
-                    title="For Professionals"
-                    subtitle="Personal Productivity Automation"
-                    description="Managers, freelancers, aur busy professionals ke liye. Apne email, calendar, aur daily tasks ko automate karein."
-                    benefits={[
-                        "Aapka Email Inbox apne aap organize ho jayega.",
-                        "Meetings apne aap schedule hongi.",
-                        "To-do list ke tasks automatically manage honge."
-                    ]}
-                    index={0}
-                    isVisible={isVisible}
-                />
-                 <AutomationServiceCard
-                    icon={Bot}
-                    title="For Small Businesses"
-                    subtitle="WhatsApp & Lead Automation"
-                    description="Yeh humari sabse popular service hai. Humara AI Bot aapke liye 24/7 leads pakdega, unse baat karega, aur unhe book karega."
-                    benefits={[
-                        "24/7 Lead Capture: Raat ko 2 baje bhi koi query karega to bot detail le lega.",
-                        "Instant Replies: Customer ko turant jawab milega.",
-                        "CRM Integration: Saari leads ek jagah save hongi."
-                    ]}
-                    index={1}
-                    isVisible={isVisible}
-                />
-                 <AutomationServiceCard
-                    icon={Building2}
-                    title="For Large Businesses"
-                    subtitle="Custom Enterprise Automation"
-                    description="Badi companies jinke process complex hain. Hum aapke internal systems (jaise finance, HR, support) ko automate karne ke liye custom n8n workflows banate hain."
-                    benefits={[
-                        "Hiring Automation: Resume shortlisting se interview scheduling tak.",
-                        "Customer Support Bots: Aapki support team ka 70% load kam karein.",
-                        "Finance & Data Automation: Invoicing aur daily reports apne aap generate honge."
-                    ]}
-                    index={2}
-                    isVisible={isVisible}
-                />
+                <Link href="/pricing#automation-pricing" className="block">
+                    <AutomationServiceCard
+                        icon={User}
+                        title="For Professionals"
+                        subtitle="Personal Productivity Automation"
+                        description="Managers, freelancers, aur busy professionals ke liye. Apne email, calendar, aur daily tasks ko automate karein."
+                        benefits={[
+                            "Aapka Email Inbox apne aap organize ho jayega.",
+                            "Meetings apne aap schedule hongi.",
+                            "To-do list ke tasks automatically manage honge."
+                        ]}
+                        index={0}
+                        isVisible={isVisible}
+                    />
+                </Link>
+                 <Link href="/pricing#automation-pricing" className="block">
+                    <AutomationServiceCard
+                        icon={Bot}
+                        title="For Small Businesses"
+                        subtitle="WhatsApp & Lead Automation"
+                        description="Yeh humari sabse popular service hai. Humara AI Bot aapke liye 24/7 leads pakdega, unse baat karega, aur unhe book karega."
+                        benefits={[
+                            "24/7 Lead Capture: Raat ko 2 baje bhi koi query karega to bot detail le lega.",
+                            "Instant Replies: Customer ko turant jawab milega.",
+                            "CRM Integration: Saari leads ek jagah save hongi."
+                        ]}
+                        index={1}
+                        isVisible={isVisible}
+                    />
+                </Link>
+                 <Link href="/pricing#automation-pricing" className="block">
+                    <AutomationServiceCard
+                        icon={Building2}
+                        title="For Large Businesses"
+                        subtitle="Custom Enterprise Automation"
+                        description="Badi companies jinke process complex hain. Hum aapke internal systems (jaise finance, HR, support) ko automate karne ke liye custom n8n workflows banate hain."
+                        benefits={[
+                            "Hiring Automation: Resume shortlisting se interview scheduling tak.",
+                            "Customer Support Bots: Aapki support team ka 70% load kam karein.",
+                            "Finance & Data Automation: Invoicing aur daily reports apne aap generate honge."
+                        ]}
+                        index={2}
+                        isVisible={isVisible}
+                    />
+                </Link>
             </div>
         </div>
 
